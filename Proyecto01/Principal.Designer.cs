@@ -33,8 +33,8 @@
             this.btnQuitar = new System.Windows.Forms.Button();
             this.btnIngrediente = new System.Windows.Forms.Button();
             this.btnNuevoPlato = new System.Windows.Forms.Button();
-            this.listaOrigen = new System.Windows.Forms.ListBox();
-            this.listaDestino = new System.Windows.Forms.ListBox();
+            this.listboxOrigen = new System.Windows.Forms.ListBox();
+            this.listboxDestino = new System.Windows.Forms.ListBox();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -78,6 +78,7 @@
             this.btnAnadir.TabIndex = 1;
             this.btnAnadir.Text = "Añadir >>";
             this.btnAnadir.UseVisualStyleBackColor = true;
+            this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
             // btnQuitar
             // 
@@ -88,6 +89,7 @@
             this.btnQuitar.TabIndex = 2;
             this.btnQuitar.Text = "Quitar <<";
             this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // btnIngrediente
             // 
@@ -109,27 +111,21 @@
             this.btnNuevoPlato.Text = "Nuevo plato";
             this.btnNuevoPlato.UseVisualStyleBackColor = true;
             // 
-            // listaOrigen
+            // listboxOrigen
             // 
-            this.listaOrigen.FormattingEnabled = true;
-            this.listaOrigen.Items.AddRange(new object[] {
-            "Ajo",
-            "Queso",
-            "Tocino",
-            "Salami",
-            "Piña"});
-            this.listaOrigen.Location = new System.Drawing.Point(15, 78);
-            this.listaOrigen.Name = "listaOrigen";
-            this.listaOrigen.Size = new System.Drawing.Size(154, 134);
-            this.listaOrigen.TabIndex = 5;
+            this.listboxOrigen.FormattingEnabled = true;
+            this.listboxOrigen.Location = new System.Drawing.Point(15, 78);
+            this.listboxOrigen.Name = "listboxOrigen";
+            this.listboxOrigen.Size = new System.Drawing.Size(154, 134);
+            this.listboxOrigen.TabIndex = 5;
             // 
-            // listaDestino
+            // listboxDestino
             // 
-            this.listaDestino.FormattingEnabled = true;
-            this.listaDestino.Location = new System.Drawing.Point(334, 78);
-            this.listaDestino.Name = "listaDestino";
-            this.listaDestino.Size = new System.Drawing.Size(154, 134);
-            this.listaDestino.TabIndex = 6;
+            this.listboxDestino.FormattingEnabled = true;
+            this.listboxDestino.Location = new System.Drawing.Point(334, 78);
+            this.listboxDestino.Name = "listboxDestino";
+            this.listboxDestino.Size = new System.Drawing.Size(154, 134);
+            this.listboxDestino.TabIndex = 6;
             // 
             // txtCliente
             // 
@@ -167,7 +163,6 @@
             this.rbLlevar.TabIndex = 1;
             this.rbLlevar.Text = "PARA LLEVAR";
             this.rbLlevar.UseVisualStyleBackColor = true;
-            this.rbLlevar.CheckedChanged += new System.EventHandler(this.eventoParaLlevar);
             // 
             // rbComerAqui
             // 
@@ -316,7 +311,7 @@
             this.txtTotal.Size = new System.Drawing.Size(185, 20);
             this.txtTotal.TabIndex = 9;
             // 
-            // Form1
+            // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -327,14 +322,14 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCliente);
-            this.Controls.Add(this.listaDestino);
-            this.Controls.Add(this.listaOrigen);
+            this.Controls.Add(this.listboxDestino);
+            this.Controls.Add(this.listboxOrigen);
             this.Controls.Add(this.btnNuevoPlato);
             this.Controls.Add(this.btnIngrediente);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnAnadir);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "Principal";
             this.Text = "Form2";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -356,8 +351,8 @@
         private System.Windows.Forms.Button btnQuitar;
         private System.Windows.Forms.Button btnIngrediente;
         private System.Windows.Forms.Button btnNuevoPlato;
-        private System.Windows.Forms.ListBox listaOrigen;
-        private System.Windows.Forms.ListBox listaDestino;
+        private System.Windows.Forms.ListBox listboxOrigen;
+        private System.Windows.Forms.ListBox listboxDestino;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
