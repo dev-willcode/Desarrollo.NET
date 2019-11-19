@@ -4,22 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppRestaurante
+namespace AppFacturaComputador
 {
-    class Ingrediente
+    class ComponenteElectronico
     {
         private String Nombre;
         private double Precio;
 
-        public Ingrediente(string nombre, double precio)
+        public ComponenteElectronico(string nombre, double precio)
         {
             this.Nombre = nombre;
             this.Precio = precio;
         }
+
         public override string ToString() => Nombre;
 
-        public string NombreIngrediente => Nombre;
+        public String NombreComponente() => Nombre;
 
-        public double PrecioIngrediente => Precio;
+        public double PrecioComponente() => Precio;
+
+        public double IVAComponente() => Precio * 0.12;
     }
 }

@@ -35,8 +35,6 @@ namespace Proyecto01
             };
             enlaceDestino.DataSource = new List<Ingrediente>();
             // Propiedades de las listbox´s
-            listboxDestino.DisplayMember = "NombreIngrediente";
-            listboxOrigen.DisplayMember = "NombreIngrediente";
             listboxDestino.DataSource = enlaceDestino;
             listboxOrigen.DataSource = enlaceOrigen;
         }
