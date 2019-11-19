@@ -100,6 +100,7 @@
             this.btnIngrediente.TabIndex = 3;
             this.btnIngrediente.Text = "Especial";
             this.btnIngrediente.UseVisualStyleBackColor = true;
+            this.btnIngrediente.Click += new System.EventHandler(this.btnIngrediente_Click);
             // 
             // btnNuevoPlato
             // 
@@ -110,6 +111,7 @@
             this.btnNuevoPlato.TabIndex = 4;
             this.btnNuevoPlato.Text = "Nuevo plato";
             this.btnNuevoPlato.UseVisualStyleBackColor = true;
+            this.btnNuevoPlato.Click += new System.EventHandler(this.btnNuevoPlato_Click);
             // 
             // listboxOrigen
             // 
@@ -294,6 +296,7 @@
             this.btnCalcular.TabIndex = 11;
             this.btnCalcular.Text = "CALCULAR";
             this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // label3
             // 

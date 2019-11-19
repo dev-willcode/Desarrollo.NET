@@ -13,8 +13,8 @@ namespace Proyecto01
 {
     public partial class Principal : Form
     {
-        BindingSource enlaceOrigen = new BindingSource();
-        BindingSource enlaceDestino = new BindingSource();
+        public BindingSource enlaceOrigen = new BindingSource();
+        public BindingSource enlaceDestino = new BindingSource();
         public Principal()
         {
             InitializeComponent();
@@ -94,6 +94,56 @@ namespace Proyecto01
             Ingrediente ingrediente = (Ingrediente)listboxDestino.SelectedItem;
             enlaceOrigen.Add(ingrediente);
             enlaceDestino.Remove(ingrediente);
+        }
+
+        private void btnNuevoPlato_Click(object sender, EventArgs e)
+        {
+            //Limpiar todo
+            txtCliente.Clear();
+            txtTotal.Clear();
+            rbComerAqui.Checked = true;
+            chJugo.Checked = false;
+            chGaseosa.Checked = false;
+            chCerveza.Checked = false;
+            chVino.Checked = false;
+            foreach (Ingrediente ingrediente in enlaceDestino)
+                enlaceOrigen.Add(ingrediente);
+            enlaceDestino.Clear();
+        }
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            if (txtCliente.Text.Length == 0) MessageBox.Show("Verifique que ha ingresado un cliente!");
+            else if (enlaceDestino.Count == 0) MessageBox.Show("No hay ingredientes seleccionados, seleccione alguno!");
+            else
+            {
+                double precioTotal = 0;
+                foreach (Ingrediente ingrediente in enlaceDestino) 
+                    precioTotal += ingrediente.PrecioIngrediente;
+                
+                // Envases
+                if (rbLlevar.Checked)
+                {
+                    precioTotal += 0.25; // Costo agregado para llevar
+                    if (chPlastico.Checked) precioTotal += 1.00;
+                    if (chAluminio.Checked) precioTotal += 1.50;
+                    if (chIsopo.Checked) precioTotal += 0.50;
+                }
+
+                //Bebidas
+                if (chJugo.Checked) precioTotal += 1.20;
+                if (chGaseosa.Checked) precioTotal += 1.80;
+                if (chCerveza.Checked) precioTotal += 2.50;
+                if (chVino.Checked) precioTotal += 5.40;
+
+                txtTotal.Text = precioTotal.ToString();
+            }
+        }
+
+        private void btnIngrediente_Click(object sender, EventArgs e)
+        {
+            PlatoEspecial platoEspecial = new PlatoEspecial(enlaceDestino);
+            platoEspecial.ShowDialog();
         }
     }
 }

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PlatoEspecial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlatoEspecial.Designer.cs">
+      <DependentUpon>PlatoEspecial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ingrediente.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -55,6 +61,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PlatoEspecial.resx">
+      <DependentUpon>PlatoEspecial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
