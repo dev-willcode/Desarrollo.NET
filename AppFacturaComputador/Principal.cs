@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace AppFacturaComputador
 {
-    public partial class Form1 : Form
+    public partial class Principal : Form
     {
         BindingSource bsMonitores = new BindingSource();
         BindingSource bsAccesorios = new BindingSource();
         List<ComponenteElectronico> listaProcesadores;
         List<ComponenteElectronico> listaMemoria;
-        public Form1()
+        public Principal()
         {
             InitializeComponent();
             generarListados();
