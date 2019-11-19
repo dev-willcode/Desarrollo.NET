@@ -23,8 +23,7 @@ namespace Proyecto01
         }
         private void crearIngredientes()
         {
-            List<Ingrediente> listaIngredientesDestino = new List<Ingrediente>();
-            List<Ingrediente> listaIngredientesOrigen = new List<Ingrediente>()
+            enlaceOrigen.DataSource = new List<Ingrediente>()
             {
                 new Ingrediente("Ajo", 1.20),
                 new Ingrediente("Salami", 3.10),
@@ -34,11 +33,10 @@ namespace Proyecto01
                 new Ingrediente("Extra queso", 2.00),
                 new Ingrediente("Extra salsa", 1.50)
             };
+            enlaceDestino.DataSource = new List<Ingrediente>();
             // Propiedades de las listbox´s
             listboxDestino.DisplayMember = "NombreIngrediente";
             listboxOrigen.DisplayMember = "NombreIngrediente";
-            enlaceOrigen.DataSource = listaIngredientesOrigen;
-            enlaceDestino.DataSource = listaIngredientesDestino;
             listboxDestino.DataSource = enlaceDestino;
             listboxOrigen.DataSource = enlaceOrigen;
         }
