@@ -54,11 +54,11 @@ namespace AppFacturaComputador
             this.txtIVA = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bsComponentesFactura = new System.Windows.Forms.BindingSource(this.components);
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ivaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsComponentesFactura = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -285,6 +285,7 @@ namespace AppFacturaComputador
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -297,10 +298,6 @@ namespace AppFacturaComputador
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(443, 107);
             this.dataGridView1.TabIndex = 30;
-            // 
-            // bsComponentesFactura
-            // 
-            this.bsComponentesFactura.DataSource = typeof(AppFacturaComputador.ComponenteElectronico);
             // 
             // cantidadDataGridViewTextBoxColumn
             // 
@@ -329,6 +326,10 @@ namespace AppFacturaComputador
             this.ivaDataGridViewTextBoxColumn.HeaderText = "Iva";
             this.ivaDataGridViewTextBoxColumn.Name = "ivaDataGridViewTextBoxColumn";
             this.ivaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bsComponentesFactura
+            // 
+            this.bsComponentesFactura.DataSource = typeof(AppFacturaComputador.ComponenteElectronico);
             // 
             // Principal
             // 
