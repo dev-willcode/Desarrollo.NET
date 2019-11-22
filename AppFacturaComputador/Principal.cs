@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AppFacturaComputador
@@ -62,23 +56,28 @@ namespace AppFacturaComputador
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
+            calcularCostes();
+        }
+
+        private void calcularCostes()
+        {
             ComponenteElectronico procesadorSeleccionado = DevolverProveedorSeleccionado();
             ComponenteElectronico memoriaSeleccionada = DevolverMemoriaSeleccionada();
             ComponenteElectronico monitorSeleccionado = (ComponenteElectronico)comboMonitor.SelectedItem;
             double subtotal = 0;
             double iva = 0;
 
-            subtotal += procesadorSeleccionado.PrecioComponente();
-            subtotal += memoriaSeleccionada.PrecioComponente();
-            subtotal += monitorSeleccionado.PrecioComponente();
-            iva += procesadorSeleccionado.IVAComponente();
-            iva += memoriaSeleccionada.IVAComponente();
-            iva += monitorSeleccionado.IVAComponente();
+            subtotal += procesadorSeleccionado.Precio;
+            subtotal += memoriaSeleccionada.Precio;
+            subtotal += monitorSeleccionado.Precio;
+            iva += procesadorSeleccionado.Iva;
+            iva += memoriaSeleccionada.Iva;
+            iva += monitorSeleccionado.Iva;
 
             foreach (ComponenteElectronico accesorio in chAccesorios.CheckedItems)
             {
-                subtotal += accesorio.PrecioComponente();
-                iva += accesorio.IVAComponente();
+                subtotal += accesorio.Precio;
+                iva += accesorio.Iva;
             }
             txtSubtotal.Text = subtotal.ToString();
             txtIVA.Text = iva.ToString();
@@ -108,30 +107,13 @@ namespace AppFacturaComputador
             ComponenteElectronico procesadorSeleccionado = DevolverProveedorSeleccionado();
             ComponenteElectronico memoriaSeleccionada = DevolverMemoriaSeleccionada();
             ComponenteElectronico monitorSeleccionado = (ComponenteElectronico)comboMonitor.SelectedItem;
-            tblFactura.Rows.Clear();
-
-            tblFactura.Rows.Add(new String[] { "1",
-                procesadorSeleccionado.NombreComponente(),
-                procesadorSeleccionado.PrecioComponente().ToString(),
-                procesadorSeleccionado.IVAComponente().ToString()});
-
-            tblFactura.Rows.Add(new String[] { "1",
-                memoriaSeleccionada.NombreComponente(),
-                memoriaSeleccionada.PrecioComponente().ToString(),
-                memoriaSeleccionada.IVAComponente().ToString()});
-
-            tblFactura.Rows.Add(new String[] { "1",
-                monitorSeleccionado.NombreComponente(),
-                monitorSeleccionado.PrecioComponente().ToString(),
-                monitorSeleccionado.IVAComponente().ToString()});
-
+            bsComponentesFactura.Clear();
+            bsComponentesFactura.Add(procesadorSeleccionado);
+            bsComponentesFactura.Add(memoriaSeleccionada);
+            bsComponentesFactura.Add(monitorSeleccionado);
             foreach (ComponenteElectronico accesorio in chAccesorios.CheckedItems)
-            {
-                tblFactura.Rows.Add(new String[] { "1",
-                    accesorio.NombreComponente(),
-                    accesorio.PrecioComponente().ToString(),
-                    accesorio.IVAComponente().ToString()});
-            }
+                bsComponentesFactura.Add(accesorio);
+            calcularCostes();
         }
     }
 }

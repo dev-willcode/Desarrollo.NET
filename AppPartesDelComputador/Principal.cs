@@ -30,7 +30,7 @@ namespace AppPartesDelComputador
                 "Procesador SXM",
                 "Procesador EMPTION",
                 "Procesador MDA"
-            };
+            };  
             listaMemoria = new List<String>()
             {
                 "Memoria 512 GB",
@@ -56,13 +56,13 @@ namespace AppPartesDelComputador
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             String cadena = "";
-
+            
             if (rbElestra.Checked) cadena += listaProcesadores[0];
             else if (rbSXM.Checked) cadena += listaProcesadores[1];
             else if (rbEption.Checked) cadena += listaProcesadores[2];
             else if (rbMDA.Checked) cadena += listaProcesadores[3];
             cadena += ",\n";
-            
+
             if (rb512gb.Checked) cadena += listaMemoria[0];
             else if (rb1tb.Checked) cadena += listaMemoria[1];
             else if (rb4tb.Checked) cadena += listaMemoria[2];
@@ -71,7 +71,6 @@ namespace AppPartesDelComputador
 
             if (chRaid.Checked) cadena += chRaid.Text +",\n";
             if (chVideo.Checked) cadena += chRaid.Text + ",\n";
-
             cadena += comboDisco.SelectedItem + ",\n";
 
             if (chAccesorios.CheckedItems.Count != 0)

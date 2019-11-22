@@ -1,4 +1,6 @@
-﻿namespace AppFacturaComputador
+﻿using System.Collections.Generic;
+
+namespace AppFacturaComputador
 {
     partial class Principal
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbCoreDuo = new System.Windows.Forms.RadioButton();
             this.rbDualCore = new System.Windows.Forms.RadioButton();
@@ -43,11 +46,6 @@
             this.rb256mb = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tblFactura = new System.Windows.Forms.DataGridView();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,9 +53,16 @@
             this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.txtIVA = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bsComponentesFactura = new System.Windows.Forms.BindingSource(this.components);
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ivaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblFactura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsComponentesFactura)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -216,44 +221,6 @@
             this.label3.TabIndex = 21;
             this.label3.Text = "Accesorios";
             // 
-            // tblFactura
-            // 
-            this.tblFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tblFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Cantidad,
-            this.Descripcion,
-            this.Valor,
-            this.IVA});
-            this.tblFactura.Location = new System.Drawing.Point(12, 220);
-            this.tblFactura.Name = "tblFactura";
-            this.tblFactura.Size = new System.Drawing.Size(443, 110);
-            this.tblFactura.TabIndex = 22;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
-            // Valor
-            // 
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            this.Valor.ReadOnly = true;
-            // 
-            // IVA
-            // 
-            this.IVA.HeaderText = "IVA";
-            this.IVA.Name = "IVA";
-            this.IVA.ReadOnly = true;
-            // 
             // btnCalcular
             // 
             this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -316,11 +283,59 @@
             this.txtTotal.Size = new System.Drawing.Size(100, 20);
             this.txtTotal.TabIndex = 29;
             // 
-            // Form1
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cantidadDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.precioDataGridViewTextBoxColumn,
+            this.ivaDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.bsComponentesFactura;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 217);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(443, 107);
+            this.dataGridView1.TabIndex = 30;
+            // 
+            // bsComponentesFactura
+            // 
+            this.bsComponentesFactura.DataSource = typeof(AppFacturaComputador.ComponenteElectronico);
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ivaDataGridViewTextBoxColumn
+            // 
+            this.ivaDataGridViewTextBoxColumn.DataPropertyName = "Iva";
+            this.ivaDataGridViewTextBoxColumn.HeaderText = "Iva";
+            this.ivaDataGridViewTextBoxColumn.Name = "ivaDataGridViewTextBoxColumn";
+            this.ivaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(467, 426);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.txtIVA);
             this.Controls.Add(this.txtSubtotal);
@@ -328,7 +343,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCalcular);
-            this.Controls.Add(this.tblFactura);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
@@ -336,13 +350,14 @@
             this.Controls.Add(this.btnGenerarFactura);
             this.Controls.Add(this.chAccesorios);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Name = "Principal";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblFactura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsComponentesFactura)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,7 +380,6 @@
         private System.Windows.Forms.RadioButton rb256mb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView tblFactura;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
@@ -373,9 +387,11 @@
         private System.Windows.Forms.TextBox txtSubtotal;
         private System.Windows.Forms.TextBox txtIVA;
         private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IVA;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ivaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bsComponentesFactura;
     }
 }
