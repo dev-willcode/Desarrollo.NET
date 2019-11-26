@@ -8,24 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AppListasPersonas
+namespace AppFormulariosMDI
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-            inicializarLista();
-        }
-
-        private void inicializarLista()
-        {
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AppListasPersonas.Properties
+namespace AppFormulariosMDI.Properties
 {
 
 
