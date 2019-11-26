@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AppFormulariosMDI
 {
-    public partial class Form1 : Form
+    public partial class AdministrarPersona : Form
     {
-        public Form1()
+        public AdministrarPersona()
         {
             InitializeComponent();
         }

@@ -46,14 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AdministrarPersona.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AdministrarPersona.Designer.cs">
+      <DependentUpon>AdministrarPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Persona.cs" />
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdministrarPersona.resx">
+      <DependentUpon>AdministrarPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +75,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\AppFormulariosMDI.Clases.Persona.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +90,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Recursos\icons8_calendar_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\icons8_user_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\icons8_user_group_man_woman_48px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\icons8_note_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\icons8_add_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\icons8_cancel_48px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\icons8_pencil_48px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
