@@ -53,6 +53,12 @@
       <DependentUpon>AdministrarPersona.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Persona.cs" />
+    <Compile Include="DatosPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosPersona.Designer.cs">
+      <DependentUpon>DatosPersona.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdministrarPersona.resx">
       <DependentUpon>AdministrarPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosPersona.resx">
+      <DependentUpon>DatosPersona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -91,7 +100,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Recursos\icons8_save_48px.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Recursos\icons8_calendar_48px.png" />
   </ItemGroup>
@@ -112,6 +123,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Recursos\icons8_pencil_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\icons8_close_window_48px_1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

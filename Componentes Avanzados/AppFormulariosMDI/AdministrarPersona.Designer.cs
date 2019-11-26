@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnInsertar = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnModificar = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnEliminar = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tblPersonas = new System.Windows.Forms.DataGridView();
             this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,14 +46,14 @@
             this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoCivilDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ciudadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bsListadoPersonas = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPersonas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsListadoPersonas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,6 +65,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(582, 51);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::AppFormulariosMDI.Properties.Resources.icons8_user_group_man_woman_48px_1;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(56, 51);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(62, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(262, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Administrador de Personas";
             // 
             // panel2
             // 
@@ -79,58 +99,61 @@
             // 
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2,
-            this.toolStripStatusLabel3});
+            this.btnInsertar,
+            this.btnModificar,
+            this.btnEliminar});
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(60, 337);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // btnInsertar
             // 
-            this.toolStripStatusLabel1.Image = global::AppFormulariosMDI.Properties.Resources.icons8_add_48px;
-            this.toolStripStatusLabel1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(58, 63);
-            this.toolStripStatusLabel1.Text = "Insertar";
-            this.toolStripStatusLabel1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnInsertar.Image = global::AppFormulariosMDI.Properties.Resources.icons8_add_48px;
+            this.btnInsertar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnInsertar.Name = "btnInsertar";
+            this.btnInsertar.Size = new System.Drawing.Size(58, 63);
+            this.btnInsertar.Text = "Insertar";
+            this.btnInsertar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
-            // toolStripStatusLabel2
+            // btnModificar
             // 
-            this.toolStripStatusLabel2.Image = global::AppFormulariosMDI.Properties.Resources.icons8_pencil_48px;
-            this.toolStripStatusLabel2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(58, 63);
-            this.toolStripStatusLabel2.Text = "Modificar";
-            this.toolStripStatusLabel2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnModificar.Image = global::AppFormulariosMDI.Properties.Resources.icons8_pencil_48px;
+            this.btnModificar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(58, 63);
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // toolStripStatusLabel3
+            // btnEliminar
             // 
-            this.toolStripStatusLabel3.Image = global::AppFormulariosMDI.Properties.Resources.icons8_cancel_48px_2;
-            this.toolStripStatusLabel3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(58, 63);
-            this.toolStripStatusLabel3.Text = "Eliminar";
-            this.toolStripStatusLabel3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEliminar.Image = global::AppFormulariosMDI.Properties.Resources.icons8_cancel_48px_2;
+            this.btnEliminar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(58, 63);
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.tblPersonas);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(62, 51);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(520, 337);
             this.panel3.TabIndex = 2;
             // 
-            // dataGridView1
+            // tblPersonas
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tblPersonas.AllowUserToAddRows = false;
+            this.tblPersonas.AutoGenerateColumns = false;
+            this.tblPersonas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblPersonas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cedulaDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
             this.apellidoDataGridViewTextBoxColumn,
@@ -138,34 +161,14 @@
             this.edadDataGridViewTextBoxColumn,
             this.estadoCivilDataGridViewTextBoxColumn,
             this.ciudadDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.personaBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(520, 337);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(62, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(262, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Administrador de Personas";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::AppFormulariosMDI.Properties.Resources.icons8_user_group_man_woman_48px_1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 51);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.tblPersonas.DataSource = this.bsListadoPersonas;
+            this.tblPersonas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblPersonas.Location = new System.Drawing.Point(0, 0);
+            this.tblPersonas.MultiSelect = false;
+            this.tblPersonas.Name = "tblPersonas";
+            this.tblPersonas.ReadOnly = true;
+            this.tblPersonas.Size = new System.Drawing.Size(520, 337);
+            this.tblPersonas.TabIndex = 0;
             // 
             // cedulaDataGridViewTextBoxColumn
             // 
@@ -216,9 +219,9 @@
             this.ciudadDataGridViewTextBoxColumn.Name = "ciudadDataGridViewTextBoxColumn";
             this.ciudadDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // personaBindingSource
+            // bsListadoPersonas
             // 
-            this.personaBindingSource.DataSource = typeof(AppFormulariosMDI.Clases.Persona);
+            this.bsListadoPersonas.DataSource = typeof(AppFormulariosMDI.Clases.Persona);
             // 
             // AdministrarPersona
             // 
@@ -232,14 +235,14 @@
             this.Text = "Administrar Persona";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPersonas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsListadoPersonas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -249,11 +252,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel btnInsertar;
+        private System.Windows.Forms.ToolStripStatusLabel btnModificar;
+        private System.Windows.Forms.ToolStripStatusLabel btnEliminar;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tblPersonas;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cedulaDataGridViewTextBoxColumn;
@@ -263,6 +266,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoCivilDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ciudadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource personaBindingSource;
+        private System.Windows.Forms.BindingSource bsListadoPersonas;
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppFormulariosMDI.Clases
 {
-    class Persona
+    public class Persona
     {
         private string cedula;
         private string nombre;
