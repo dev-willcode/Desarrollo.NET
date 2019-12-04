@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtCedula = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtNombre = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -47,7 +46,7 @@
             this.comboEstadoCivil = new System.Windows.Forms.ComboBox();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelDerecho = new System.Windows.Forms.Panel();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -71,10 +70,12 @@
             this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelDerecho.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCedula
@@ -327,18 +328,19 @@
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
-            // panel1
+            // panelDerecho
             // 
-            this.panel1.Controls.Add(this.bunifuFlatButton2);
-            this.panel1.Controls.Add(this.btn);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.bunifuSeparator2);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.bunifuCustomLabel8);
-            this.panel1.Location = new System.Drawing.Point(401, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(438, 470);
-            this.panel1.TabIndex = 20;
+            this.panelDerecho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(36)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.panelDerecho.Controls.Add(this.bunifuFlatButton2);
+            this.panelDerecho.Controls.Add(this.btn);
+            this.panelDerecho.Controls.Add(this.panel2);
+            this.panelDerecho.Controls.Add(this.bunifuSeparator2);
+            this.panelDerecho.Controls.Add(this.comboBox1);
+            this.panelDerecho.Controls.Add(this.bunifuCustomLabel8);
+            this.panelDerecho.Location = new System.Drawing.Point(401, 12);
+            this.panelDerecho.Name = "panelDerecho";
+            this.panelDerecho.Size = new System.Drawing.Size(438, 470);
+            this.panelDerecho.TabIndex = 20;
             // 
             // bunifuFlatButton2
             // 
@@ -410,6 +412,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Location = new System.Drawing.Point(32, 108);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(385, 294);
@@ -430,6 +433,7 @@
             // bunifuCustomLabel8
             // 
             this.bunifuCustomLabel8.AutoSize = true;
+            this.bunifuCustomLabel8.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel8.Location = new System.Drawing.Point(26, 10);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
@@ -710,23 +714,39 @@
             this.panel3.Size = new System.Drawing.Size(390, 470);
             this.panel3.TabIndex = 21;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.Image = global::AppHerencia.Properties.Resources.arrow_circle_right;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(345, 202);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(94, 104);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(851, 494);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelDerecho);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelDerecho.ResumeLayout(false);
+            this.panelDerecho.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -751,7 +771,7 @@
         private System.Windows.Forms.ComboBox comboEstadoCivil;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelDerecho;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
@@ -775,6 +795,7 @@
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
         private Bunifu.Framework.UI.BunifuFlatButton btn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppHerencia.Clases
 {
-    class Empleado
+    abstract class Empleado
     {
         private string cedula;
         private string nombre;
@@ -35,5 +35,8 @@ namespace AppHerencia.Clases
         public int Edad { get => edad; set => edad = value; }
         public string EstadoCivil { get => estadoCivil; set => estadoCivil = value; }
         public string Ciudad { get => ciudad; set => ciudad = value; }
+
+        public abstract double calcularSueldo();
+        public abstract double imprimir();
     }
 }
