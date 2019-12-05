@@ -1,8 +1,8 @@
-﻿using AppHerencia.Clases;
+﻿using AppAbstractas.Clases;
 using System;
 using System.Windows.Forms;
 
-namespace AppHerencia
+namespace AppAbstractas
 {
     public partial class IngresoEmpleado : Form
     {
@@ -22,26 +22,43 @@ namespace AppHerencia
 
         private void eventoCambioTipo(object sender, EventArgs e)
         {
-            empleadoSeleccionado = crearEmpleado();
             panelInterno.Controls.Clear();
+
+            switch (comboTipoEmpleado.selectedIndex)
+            {
+                case 1:
+                    empleadoSeleccionado = crearEmpleado(new EmpleadoAsalariado());
+                    break;
+                case 2:
+                    empleadoSeleccionado = crearEmpleado(new EmpleadoAsalariadoComision());
+                    break;
+                case 3:
+                    empleadoSeleccionado = crearEmpleado(new EmpleadoComision());
+                    break;
+                case 4:
+                    empleadoSeleccionado = crearEmpleado(new EmpleadoHora());
+                    break;
+            }
 
             if (empleadoSeleccionado != null)
             {
                 switch (comboTipoEmpleado.selectedIndex)
                 {
                     case 1:
+                        empleadoSeleccionado = crearEmpleado(new EmpleadoAsalariado());
                         panelInterno.Controls.Add(new PanelAsalariado(this));
                         break;
                     case 2:
+                        empleadoSeleccionado = crearEmpleado(new EmpleadoAsalariadoComision());
                         panelInterno.Controls.Add(new PanelAsalariadoComision(this));
                         break;
                     case 3:
+                        empleadoSeleccionado = crearEmpleado(new EmpleadoComision());
                         panelInterno.Controls.Add(new PanelComision(this));
                         break;
                     case 4:
+                        empleadoSeleccionado = crearEmpleado(new EmpleadoHora());
                         panelInterno.Controls.Add(new PanelHora(this));
-                        break;
-                    default:
                         break;
                 }
             }
@@ -51,9 +68,8 @@ namespace AppHerencia
             }
         }
 
-        private Empleado crearEmpleado()
+        private Empleado crearEmpleado(Empleado empleado)
         {
-            Empleado empleado = new Empleado();
             String errores = "";
 
             if (txtCedula.Text.Length == 0 | txtApellido.Text.Length == 0 | txtNombre.Text.Length == 0

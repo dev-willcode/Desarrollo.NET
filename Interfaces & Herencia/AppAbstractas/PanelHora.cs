@@ -1,8 +1,8 @@
-﻿using AppHerencia.Clases;
+﻿using AppAbstractas.Clases;
 using System;
 using System.Windows.Forms;
 
-namespace AppHerencia
+namespace AppAbstractas
 {
     public partial class PanelHora : UserControl
     {
@@ -25,8 +25,8 @@ namespace AppHerencia
                 if (panelPadre.recibeBono())
                     MessageBox.Show("Es el cumpleaños del empleado! recibe un bono de $200!" +
                         "\n sueldo total: " + (empleado.calcularSueldo() + 200));
-                
-                    panelPadre.limpiarFormulario();
+
+                panelPadre.limpiarFormulario();
             }
             catch (Exception)
             {

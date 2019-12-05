@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace AppHerencia.Clases
+namespace AppAbstractas.Clases
 {
-    public class Empleado
+    public abstract class Empleado
     {
         private string cedula;
         private string nombre;
@@ -47,5 +47,9 @@ namespace AppHerencia.Clases
                 "\n -Estado Civil: " + EstadoCivil +
                 "\n -Ciudad: " + Ciudad);
         }
+
+        public abstract double calcularSueldo();
+
+        public abstract void imprimir();
     }
 }

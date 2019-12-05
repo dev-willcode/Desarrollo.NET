@@ -1,13 +1,14 @@
-﻿using AppHerencia.Clases;
+﻿using AppAbstractas.Clases;
 using System;
 using System.Windows.Forms;
 
-namespace AppHerencia
+namespace AppAbstractas
 {
-    public partial class PanelHora : UserControl
+    public partial class PanelAsalariado : UserControl
     {
         private IngresoEmpleado panelPadre;
-        public PanelHora(IngresoEmpleado panelPadre)
+
+        public PanelAsalariado(IngresoEmpleado panelPadre)
         {
             this.panelPadre = panelPadre;
             InitializeComponent();
@@ -15,18 +16,17 @@ namespace AppHerencia
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            EmpleadoHora empleado = new EmpleadoHora(panelPadre.empleadoSeleccionado);
+            EmpleadoAsalariado empleado = new EmpleadoAsalariado(panelPadre.empleadoSeleccionado);
             try
             {
-                empleado.HorasTrabajadas = double.Parse(txtHora.Text);
-                empleado.CostoHora = double.Parse(txtCostoHora.Text);
+                empleado.SueldoFijo = double.Parse(txtSueldo.Text);
                 empleado.ImprimirDatos();
                 empleado.imprimir();
                 if (panelPadre.recibeBono())
                     MessageBox.Show("Es el cumpleaños del empleado! recibe un bono de $200!" +
                         "\n sueldo total: " + (empleado.calcularSueldo() + 200));
-                
-                    panelPadre.limpiarFormulario();
+
+                panelPadre.limpiarFormulario();
             }
             catch (Exception)
             {
