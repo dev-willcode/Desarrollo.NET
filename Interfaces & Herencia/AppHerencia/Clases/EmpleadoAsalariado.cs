@@ -11,10 +11,8 @@ namespace AppHerencia.Clases
         {
         }
 
-        public EmpleadoAsalariado(string cedula, string nombre, string apellido, int edad, string estadoCivil, string ciudad, double sueldoFijo)
-            : base(cedula, nombre, apellido, edad, estadoCivil, ciudad)
+        public EmpleadoAsalariado(Empleado empleado) : base(empleado)
         {
-            this.SueldoFijo = sueldoFijo;
         }
 
         public double SueldoFijo { get => sueldoFijo; set => sueldoFijo = value; }

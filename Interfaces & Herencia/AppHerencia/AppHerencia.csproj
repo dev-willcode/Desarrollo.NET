@@ -55,31 +55,67 @@
     <Compile Include="Clases\EmpleadoAsalariadoComision.cs" />
     <Compile Include="Clases\EmpleadoComision.cs" />
     <Compile Include="Clases\EmpleadoHora.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="IngresoEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="IngresoEmpleado.Designer.cs">
+      <DependentUpon>IngresoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelAsalariado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PanelAsalariado.Designer.cs">
+      <DependentUpon>PanelAsalariado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelAsalariadoComision.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PanelAsalariadoComision.Designer.cs">
+      <DependentUpon>PanelAsalariadoComision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelComision.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PanelComision.Designer.cs">
+      <DependentUpon>PanelComision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelHora.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PanelHora.Designer.cs">
+      <DependentUpon>PanelHora.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="IngresoEmpleado.resx">
+      <DependentUpon>IngresoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelAsalariado.resx">
+      <DependentUpon>PanelAsalariado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelAsalariadoComision.resx">
+      <DependentUpon>PanelAsalariadoComision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelComision.resx">
+      <DependentUpon>PanelComision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelHora.resx">
+      <DependentUpon>PanelHora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -88,10 +124,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <None Include="resources\arrow-circle-right.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

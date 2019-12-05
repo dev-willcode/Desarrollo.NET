@@ -11,13 +11,9 @@ namespace AppHerencia.Clases
         {
         }
 
-        public EmpleadoComision(string cedula, string nombre, string apellido, int edad, string estadoCivil, string ciudad, double ventasBrutas, double porcentaje)
-            : base(cedula, nombre, apellido, edad, estadoCivil, ciudad)
+        public EmpleadoComision(Empleado empleado) : base(empleado)
         {
-            this.VentasBrutas = ventasBrutas;
-            this.Porcentaje = porcentaje;
         }
-
         public double VentasBrutas { get => ventasBrutas; set => ventasBrutas = value; }
         public double Porcentaje { get => porcentaje; set => porcentaje = value; }
 
