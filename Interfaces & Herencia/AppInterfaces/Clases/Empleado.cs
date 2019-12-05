@@ -2,8 +2,6 @@
 {
     interface Empleado
     {
-        void ImprimirDatos();
-
         double calcularSueldo();
 
         void imprimir();
