@@ -1,8 +1,8 @@
-﻿using AppHerencia.Clases;
+﻿using AppInterfaces.Clases;
 using System;
 using System.Windows.Forms;
 
-namespace AppHerencia
+namespace AppInterfaces
 {
     public partial class PanelAsalariado : UserControl
     {

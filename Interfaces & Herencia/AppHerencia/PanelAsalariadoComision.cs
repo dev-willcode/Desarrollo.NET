@@ -27,8 +27,8 @@ namespace AppHerencia
                 if (panelPadre.recibeBono())
                     MessageBox.Show("Es el cumpleaños del empleado! recibe un bono de $200!" +
                         "\n sueldo total: " + (empleado.calcularSueldo() + 200));
-                
-                    panelPadre.limpiarFormulario();
+
+                panelPadre.limpiarFormulario();
             }
             catch (Exception)
             {
