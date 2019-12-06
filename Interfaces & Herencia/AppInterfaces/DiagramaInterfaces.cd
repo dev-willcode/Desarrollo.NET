@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AppInterfaces.Clases.EmpleadoAsalariado">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <Members>
+      <Method Name="EmpleadoAsalariado" Hidden="true" />
+      <Property Name="SueldoFijo" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAABAAAAAQAAQAAAAAAAA=</HashCode>
+      <FileName>Clases\EmpleadoAsalariado.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppInterfaces.Clases.EmpleadoAsalariadoComision">
+    <Position X="5" Y="7" Width="1.5" />
+    <Members>
+      <Method Name="EmpleadoAsalariadoComision" Hidden="true" />
+      <Property Name="SalarioBase" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAABAAQAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Clases\EmpleadoAsalariadoComision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppInterfaces.Clases.EmpleadoComision">
+    <Position X="5" Y="4.5" Width="1.5" />
+    <Members>
+      <Method Name="EmpleadoComision" Hidden="true" />
+      <Property Name="Porcentaje" Hidden="true" />
+      <Property Name="VentasBrutas" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAgAAAgIAAAIAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Clases\EmpleadoComision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppInterfaces.Clases.EmpleadoEmpresa">
+    <Position X="2.5" Y="0.5" Width="1.75" />
+    <Members>
+      <Property Name="Apellido" Hidden="true" />
+      <Property Name="Cedula" Hidden="true" />
+      <Property Name="Ciudad" Hidden="true" />
+      <Property Name="Edad" Hidden="true" />
+      <Method Name="EmpleadoEmpresa" Hidden="true" />
+      <Property Name="EstadoCivil" Hidden="true" />
+      <Property Name="FechaNacimiento" Hidden="true" />
+      <Property Name="Nombre" Hidden="true" />
+      <Property Name="Sexo" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAgSAAALEgAAAgAwAAAEIAgAAAAYAABQAAAA=</HashCode>
+      <FileName>Clases\EmpleadoEmpresa.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AppInterfaces.Clases.EmpleadoHora">
+    <Position X="2.75" Y="4.5" Width="1.5" />
+    <Members>
+      <Property Name="CostoHora" Hidden="true" />
+      <Method Name="EmpleadoHora" Hidden="true" />
+      <Property Name="HorasTrabajadas" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAFAQAABAEAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Clases\EmpleadoHora.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppInterfaces.IngresoEmpleado" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>4AAAAIAAAOAACIAQAACAAkECAOAHQIAQQKgYABAAgAA=</HashCode>
+      <FileName>IngresoEmpleado.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppInterfaces.PanelAsalariado" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAACBAAAACAAAECAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>PanelAsalariado.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppInterfaces.PanelAsalariadoComision" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAACBAAAACAAAECAAAAAAEAAghAAAAAAAA=</HashCode>
+      <FileName>PanelAsalariadoComision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppInterfaces.PanelComision" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAACBAAAACAAAECAAAAAAEAAggAAAAAAAA=</HashCode>
+      <FileName>PanelComision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppInterfaces.PanelHora" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAACBAAAACAAAECAAAAAAAAABgEAAAAAAA=</HashCode>
+      <FileName>PanelHora.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppInterfaces.Program" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppInterfaces.Properties.Resources" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppInterfaces.Properties.Settings" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="AppInterfaces.Clases.Empleado" Collapsed="true">
+    <Position X="7.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Clases\Empleado.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

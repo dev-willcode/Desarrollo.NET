@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AppHerencia.Clases.Empleado">
+    <Position X="2.75" Y="0.5" Width="2.25" />
+    <Members>
+      <Property Name="Apellido" Hidden="true" />
+      <Property Name="Cedula" Hidden="true" />
+      <Property Name="Ciudad" Hidden="true" />
+      <Property Name="Edad" Hidden="true" />
+      <Method Name="Empleado" Hidden="true" />
+      <Property Name="EstadoCivil" Hidden="true" />
+      <Property Name="FechaNacimiento" Hidden="true" />
+      <Property Name="Nombre" Hidden="true" />
+      <Property Name="Sexo" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAgSAAAKEgAAAgAwAAAEIAgAAAAIAABQAAAA=</HashCode>
+      <FileName>Clases\Empleado.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppHerencia.Clases.EmpleadoAsalariado">
+    <Position X="3" Y="4.5" Width="1.75" />
+    <Members>
+      <Method Name="EmpleadoAsalariado" Hidden="true" />
+      <Property Name="SueldoFijo" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAABAAAAAQAAQAAAAAAAA=</HashCode>
+      <FileName>Clases\EmpleadoAsalariado.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppHerencia.Clases.EmpleadoAsalariadoComision">
+    <Position X="5" Y="7" Width="2.25" />
+    <Members>
+      <Method Name="EmpleadoAsalariadoComision" Hidden="true" />
+      <Property Name="SalarioBase" Hidden="true" />
+    </Members>
+    <InheritanceLine Type="AppHerencia.Clases.EmpleadoComision" FixedToPoint="true">
+      <Path>
+        <Point X="6.125" Y="6.569" />
+        <Point X="6.125" Y="7" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAABAAQAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Clases\EmpleadoAsalariadoComision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppHerencia.Clases.EmpleadoComision">
+    <Position X="5" Y="4.5" Width="2.25" />
+    <Members>
+      <Method Name="EmpleadoComision" Hidden="true" />
+      <Property Name="Porcentaje" Hidden="true" />
+      <Property Name="VentasBrutas" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAgAAAgIAAAIAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Clases\EmpleadoComision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppHerencia.Clases.EmpleadoHora">
+    <Position X="0.5" Y="4.5" Width="2.25" />
+    <Members>
+      <Property Name="CostoHora" Hidden="true" />
+      <Method Name="EmpleadoHora" Hidden="true" />
+      <Property Name="HorasTrabajadas" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAFAQAABAEAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Clases\EmpleadoHora.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppHerencia.IngresoEmpleado" Collapsed="true">
+    <Position X="10" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>4AAAAIAAAOAACIAQAACAAkECAOAHQIAQQKgYABAAgAA=</HashCode>
+      <FileName>IngresoEmpleado.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppHerencia.PanelAsalariado" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAACBAAAACAAAECAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>PanelAsalariado.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppHerencia.PanelAsalariadoComision" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAACBAAAACAAAECAAAAAAEAAghAAAAAAAA=</HashCode>
+      <FileName>PanelAsalariadoComision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppHerencia.PanelComision" Collapsed="true">
+    <Position X="10" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAACBAAAACAAAECAAAAAAEAAggAAAAAAAA=</HashCode>
+      <FileName>PanelComision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppHerencia.PanelHora" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAACBAAAACAAAECAAAAAAAAABgEAAAAAAA=</HashCode>
+      <FileName>PanelHora.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppHerencia.Program" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppHerencia.Properties.Resources" Collapsed="true">
+    <Position X="10" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppHerencia.Properties.Settings" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
