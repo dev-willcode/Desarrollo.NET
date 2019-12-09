@@ -122,7 +122,7 @@
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(190, 30);
             this.bunifuCustomLabel1.TabIndex = 33;
-            this.bunifuCustomLabel1.Text = "Tipo de Empleado";
+            this.bunifuCustomLabel1.Text = "Tipo de IEmpleado";
             this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panelInterno
@@ -278,7 +278,7 @@
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(110, 30);
             this.bunifuCustomLabel7.TabIndex = 32;
-            this.bunifuCustomLabel7.Text = "Empleado";
+            this.bunifuCustomLabel7.Text = "IEmpleado";
             this.bunifuCustomLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtNombre

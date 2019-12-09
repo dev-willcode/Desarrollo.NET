@@ -6,7 +6,7 @@ namespace AppInterfaces
 {
     public partial class IngresoEmpleado : Form
     {
-        public EmpleadoEmpresa empleadoSeleccionado;
+        public Empleado empleadoSeleccionado;
         public IngresoEmpleado()
         {
             InitializeComponent();
@@ -68,13 +68,13 @@ namespace AppInterfaces
             }
         }
 
-        private EmpleadoEmpresa crearEmpleado(EmpleadoEmpresa empleado)
+        private Empleado crearEmpleado(Empleado empleado)
         {
             String errores = "";
 
             if (txtCedula.Text.Length == 0 | txtApellido.Text.Length == 0 | txtNombre.Text.Length == 0
                 | txtEdad.Text.Length == 0 | txtCiudad.Text.Length == 0 | comboEstadoCivil.selectedIndex == 0)
-                errores += " - Verifique que ha completado el formulario EmpleadoEmpresa correctamente";
+                errores += " - Verifique que ha completado el formulario Empleado correctamente";
             else
             {
                 empleado.Cedula = txtCedula.Text;
