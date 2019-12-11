@@ -26,5 +26,10 @@ namespace AppFormulariosMDI
                 administrarPersona.Show();
             }
         }
+
+        private void gestionarPersonasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

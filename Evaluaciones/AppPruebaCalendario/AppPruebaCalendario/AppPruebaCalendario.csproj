@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{99638025-414C-433E-B5D6-927540C05868}</ProjectGuid>
+    <ProjectGuid>{7A01AC66-5571-48CA-9BFC-5D15F0F7D1CF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>AppPelicula</RootNamespace>
-    <AssemblyName>AppPelicula</AssemblyName>
+    <RootNamespace>AppPruebaCalendario</RootNamespace>
+    <AssemblyName>AppPruebaCalendario</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,7 +46,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\Pelicula.cs" />
+    <Compile Include="BuscarCompromiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarCompromiso.Designer.cs">
+      <DependentUpon>BuscarCompromiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarCumpleanos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarCumpleanos.Designer.cs">
+      <DependentUpon>BuscarCumpleanos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarPersona.Designer.cs">
+      <DependentUpon>BuscarPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Compromisos.cs" />
+    <Compile Include="Clases\Persona.cs" />
+    <Compile Include="DatosCompromiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosCompromiso.Designer.cs">
+      <DependentUpon>DatosCompromiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatosPersonales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosPersonales.Designer.cs">
+      <DependentUpon>DatosPersonales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +86,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BuscarCompromiso.resx">
+      <DependentUpon>BuscarCompromiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarCumpleanos.resx">
+      <DependentUpon>BuscarCumpleanos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarPersona.resx">
+      <DependentUpon>BuscarPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosCompromiso.resx">
+      <DependentUpon>DatosCompromiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosPersonales.resx">
+      <DependentUpon>DatosPersonales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
@@ -68,7 +113,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Properties\DataSources\AppPelicula.Clases.Pelicula.datasource" />
+    <None Include="Properties\DataSources\AppPruebaCalendario.Clases.Persona.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

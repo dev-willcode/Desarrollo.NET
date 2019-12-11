@@ -84,6 +84,7 @@
             this.gestionarPersonasToolStripMenuItem.Name = "gestionarPersonasToolStripMenuItem";
             this.gestionarPersonasToolStripMenuItem.Size = new System.Drawing.Size(167, 52);
             this.gestionarPersonasToolStripMenuItem.Text = "Gestionar personas";
+            this.gestionarPersonasToolStripMenuItem.Click += new System.EventHandler(this.gestionarPersonasToolStripMenuItem_Click);
             // 
             // administrarPersonasToolStripMenuItem
             // 
@@ -100,7 +101,7 @@
             this.sentenciasLINQToolStripMenuItem.Size = new System.Drawing.Size(153, 52);
             this.sentenciasLINQToolStripMenuItem.Text = "Sentencias LINQ";
             // 
-            // Form1
+            // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,7 +110,7 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "Principal";
             this.Text = "Form1";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
