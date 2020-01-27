@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MarketECUADOR" Class="BDSupermercadoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=JCC;Initial Catalog=MarketECUADOR;Integrated Security=True" SettingsObjectName="Datos.Properties.Settings" SettingsPropertyName="MarketECUADORConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CATEGORIA" Member="CATEGORIA">
+    <Type Name="CATEGORIA">
+      <Column Name="IdCategoria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Categoria" Member="Categoria1" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VProdCategoria" Member="VProdCategoria">
+    <Type Name="VProdCategoria">
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="UnidadMedida" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PrecioProveedor" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="StockActual" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="StockMinimo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PrecioVenta" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.cp_ActualizarProveedor" Method="cp_ActualizarProveedor">
+    <Parameter Name="IdProveedor" Parameter="idProveedor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CedProveedor" Parameter="cedProveedor" Type="System.String" DbType="VarChar(13)" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="Representante" Parameter="representante" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="Ciudad" Parameter="ciudad" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Fax" Parameter="fax" Type="System.String" DbType="VarChar(15)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cp_EliminarProveedor" Method="cp_EliminarProveedor">
+    <Parameter Name="IdProveedor" Parameter="idProveedor" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cp_InsertarProveedor" Method="cp_InsertarProveedor">
+    <Parameter Name="IdProveedor" Parameter="idProveedor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CedProveedor" Parameter="cedProveedor" Type="System.String" DbType="VarChar(13)" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="Representante" Parameter="representante" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="Ciudad" Parameter="ciudad" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Fax" Parameter="fax" Type="System.String" DbType="VarChar(15)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cp_ListaProveedoresFiltro" Method="cp_ListaProveedoresFiltro">
+    <Parameter Name="Valor" Parameter="valor" Type="System.String" DbType="VarChar(40)" />
+    <ElementType Name="cp_ListaProveedoresFiltroResult">
+      <Column Name="IdProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CedProveedor" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Representante" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="Ciudad" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cp_EliminarCategoria" Method="cp_EliminarCategoria">
+    <Parameter Name="Ide" Parameter="ide" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cp_ActualizarCategoria" Method="cp_ActualizarCategoria">
+    <Parameter Name="Ide" Parameter="ide" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cat" Parameter="cat" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Descp" Parameter="descp" Type="System.String" DbType="VarChar(40)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cp_InsertarCategoria" Method="cp_InsertarCategoria">
+    <Parameter Name="Cat" Parameter="cat" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Descp" Parameter="descp" Type="System.String" DbType="VarChar(40)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cp_ListarCategoria_Filtro" Method="cp_ListarCategoria_Filtro">
+    <Parameter Name="Valor" Parameter="valor" Type="System.String" DbType="VarChar(40)" />
+    <ElementType Name="cp_ListarCategoria_FiltroResult">
+      <Column Name="IdCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cp_ActualizarProducto" Method="cp_ActualizarProducto">
+    <Parameter Name="IdeProd" Parameter="ideProd" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdeCat" Parameter="ideCat" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nom" Parameter="nom" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="UnidadMedida" Parameter="unidadMedida" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="PrecioProveedor" Parameter="precioProveedor" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="PrecioVenta" Parameter="precioVenta" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="StockAct" Parameter="stockAct" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="StockMin" Parameter="stockMin" Type="System.Int16" DbType="SmallInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cp_EliminarPoducto" Method="cp_EliminarPoducto">
+    <Parameter Name="IdeProd" Parameter="ideProd" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cp_InsertarProducto" Method="cp_InsertarProducto">
+    <Parameter Name="IdeProd" Parameter="ideProd" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdeCat" Parameter="ideCat" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nom" Parameter="nom" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="UnidadMedida" Parameter="unidadMedida" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="PrecioProveedor" Parameter="precioProveedor" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="PrecioVentan" Parameter="precioVentan" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="StockAct" Parameter="stockAct" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="StockMin" Parameter="stockMin" Type="System.Int16" DbType="SmallInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cp_ListarProducto_Filtro" Method="cp_ListarProducto_Filtro">
+    <Parameter Name="Valor" Parameter="valor" Type="System.String" DbType="VarChar(40)" />
+    <ElementType Name="cp_ListarProducto_FiltroResult">
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="UnidadMedida" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PrecioProveedor" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="StockActual" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="StockMinimo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PrecioVenta" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cp_listarProducto" Method="cp_listarProducto">
+    <ElementType Name="cp_listarProductoResult">
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="UnidadMedida" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PrecioProveedor" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="StockActual" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="StockMinimo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PrecioVenta" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
