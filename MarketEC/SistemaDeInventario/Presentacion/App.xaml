@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:Presentacion"
              StartupUri="Inventario/AdminCategoria.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Recursos/Elementos.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

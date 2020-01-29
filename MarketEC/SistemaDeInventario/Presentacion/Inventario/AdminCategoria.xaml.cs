@@ -21,6 +21,11 @@ namespace Presentacion.Inventario
             ((CollectionViewSource)FindResource("categoriaViewSource")).Source = categoriaLN.MostrarCategoria();
         }
 
+        public void cargarListado(string filtro)
+        {
+            ((CollectionViewSource)FindResource("categoriaViewSource")).Source = categoriaLN.MostrarCategoriaFitro(filtro);
+        }
+
         private void BtnAnadir(object sender, RoutedEventArgs e)
         {
             FormCategoria form = new FormCategoria(this);
@@ -67,6 +72,17 @@ namespace Presentacion.Inventario
         private void BtnSalir(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void evento_filtrar(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtFiltro.Text))
+            {
+                cargarListado(txtFiltro.Text);
+            } else
+            {
+                cargarListado();
+            }
         }
     }
 }

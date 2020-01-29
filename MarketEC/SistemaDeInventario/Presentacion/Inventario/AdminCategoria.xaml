@@ -3,26 +3,37 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-        xmlns:Inventario="clr-namespace:Entidades.Inventario;assembly=Entidades" 
+        xmlns:Inventario="clr-namespace:Entidades.Inventario;assembly=Entidades"
         mc:Ignorable="d"
         Title="Categorias" Height="450" Width="800" 
         WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <CollectionViewSource x:Key="categoriaViewSource" d:DesignSource="{d:DesignInstance {x:Type Inventario:Categoria}, CreateList=True}"/>
+        <ResourceDictionary x:Key="botones" Source="../Recursos/Elementos.xaml"></ResourceDictionary>
     </Window.Resources>
     <DockPanel>
-        <Label Content="Administración de categorias" DockPanel.Dock="Top" FontSize="25" HorizontalContentAlignment="Center"/>
-        <Grid DockPanel.Dock="Bottom" Height="60" Margin="20,20,20,20">
+        <StackPanel Margin="0,0,0,0" Orientation="Vertical" DockPanel.Dock="Top">
+            <Label Content="Administración de categorias" FontSize="25" HorizontalContentAlignment="Center"/>
+            <DockPanel Margin="10,10,10,10">
+                <Label Content="buscar"></Label>
+                <TextBox x:Name="txtFiltro" TextChanged="evento_filtrar"></TextBox>
+            </DockPanel>
+        </StackPanel>
+        <Grid DockPanel.Dock="Bottom" Height="40" Margin="20,20,20,20">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="Añadir categoria" Click="BtnAnadir"></Button>
-            <Button Grid.Column="1" Content="Editar Categoria" Click="BtnModificar"></Button>
-            <Button Grid.Column="2" Content="Eliminar categoria" Click="BtnEliminar"></Button>
-            <Button Grid.Column="3" Content="Salir" Click="BtnSalir"></Button>
+            <Button Grid.Column="0" Content="Añadir categoria" Click="BtnAnadir" 
+                    Style="{StaticResource ResourceKey=btnRounded-border}" />
+            <Button Grid.Column="1" Content="Editar Categoria" Click="BtnModificar"
+                    Style="{StaticResource ResourceKey=btnRounded-border}" />
+            <Button Grid.Column="2" Content="Eliminar categoria" Click="BtnEliminar"
+                    Style="{StaticResource ResourceKey=btnRounded-border}" />
+            <Button Grid.Column="3" Content="Salir" Click="BtnSalir"
+                    Style="{StaticResource ResourceKey=btnRounded-border}" />
         </Grid>
         <DockPanel DataContext="{StaticResource categoriaViewSource}">
             <DataGrid x:Name="categoriaDataGrid" ColumnWidth="*" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="20" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeRows="False" GridLinesVisibility="Horizontal" SelectionMode="Single" IsSynchronizedWithCurrentItem="True">
