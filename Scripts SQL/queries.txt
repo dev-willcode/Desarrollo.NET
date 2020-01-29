@@ -1,0 +1,84 @@
+// query select
+// todas las columnas
+select * from [dbo].[producto];
+
+// solo una columna
+select [stock_actual] from [dbo].[producto];
+
+// x columnas definidas
+select [nombre], [stock_actual] from [dbo].[producto];
+
+// query count
+SELECT COUNT(*) FROM [dbo].[producto];
+// por columna
+SELECT COUNT(id_proveedor) FROM [dbo].[producto];
+// contar agrupados
+SELECT COUNT(id_proveedor) FROM [dbo].[producto] GROUP BY id_categoria;
+
+// query avg
+SELECT AVG(*) FROM [dbo].[producto];
+//por columna
+SELECT AVG(id_proveedor) FROM [dbo].[producto];
+// media agrupados
+SELECT AVG(id_proveedor) FROM [dbo].[producto] GROUP BY id_categoria;
+
+// query MAX
+SELECT MAX(*) FROM [dbo].[producto];
+//por columna
+SELECT MAX(id_proveedor) FROM [dbo].[producto];
+// maximo de un grupo
+SELECT MAX(id_proveedor) FROM [dbo].[producto] GROUP BY id_categoria;
+
+// query MIN
+SELECT MIN(*) FROM [dbo].[producto];
+//por columna
+SELECT MIN(id_proveedor) FROM [dbo].[producto];
+// MINIMO de un grupo
+SELECT MIN(id_proveedor) FROM [dbo].[producto] GROUP BY id_categoria;
+
+
+// query where
+SELECT * FROM [dbo].[producto] WHERE stock_actual > 0;
+// query con operadores logicos
+SELECT * FROM [dbo].[producto] WHERE stock_actual > 0 AND stock_minimo > 9; 
+SELECT * FROM [dbo].[producto] WHERE stock_actual = 100 OR stock_minimo > 9; 
+// where ordenado
+SELECT * FROM [dbo].[producto] WHERE stock_actual > 0 ORDER BY stock_actual; 
+// ordenado descendiente
+SELECT * FROM [dbo].[producto] WHERE stock_actual > 0 ORDER BY stock_actual DESC;  
+
+// query in
+// condicion cuando el dato de la columna esté en 10
+SELECT * FROM [dbo].[producto] WHERE stock_actual IN(10);
+// condicion cuando el dato de la columna esté en  n posibilidades
+SELECT * FROM [dbo].[producto] WHERE stock_actual IN(10,11,12,13);
+
+//query between
+// condicion cuando el dato de la columna esté en un rango
+SELECT * FROM [dbo].[producto] WHERE precio_proveedor BETWEEN 300.00 AND 2000;
+// condicion cuando el dato de la columna no esté en un rango
+SELECT * FROM [dbo].[producto] WHERE precio_proveedor NOT BETWEEN 300.00 AND 2000;
+
+//query like
+// donde empieze con
+SELECT * FROM [dbo].[producto] WHERE nombre Like 'a%';
+// donde termine con
+SELECT * FROM [dbo].[producto] WHERE nombre Like '%r';
+// primera letra coincida con
+SELECT * FROM [dbo].[producto] WHERE nombre Like '[AB]%';
+// este entre el rango (case sensitivo)
+SELECT * FROM [dbo].[producto] WHERE nombre Like '[A-C]';
+// segunda letra
+SELECT * FROM [dbo].[producto] WHERE nombre Like '_a%';
+// tercera letra
+SELECT * FROM [dbo].[producto] WHERE nombre Like '__u%';
+
+
+//INSERT 
+ INSERT INTO [dbo].[producto] values(1,0,0,200,'leche','lts',200.20,200,30,2,100);
+ // UPDATE
+UPDATE [dbo].[producto] set stock_actual +=1 where id = 2;
+select * from [dbo].[producto];
+ //DELETE
+ DELETE FROM [dbo].[producto] WHERE id = 2;
+ DELETE TOP(10) FROM [dbo].[producto];

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Datos.Inventario
 {
-    class CategoriaCD
+    public class CategoriaCD
     {
         public static List<cp_ListarCategoria_FiltroResult> ListarCategoriasFiltro(string busqueda)
         {
@@ -48,14 +48,14 @@ namespace Datos.Inventario
                 DB = null;
             }
         }
-        public static void InsertarCategoria(ECategoria oc)
+        public static void InsertarCategoria(Categoria oc)
         {
             BDMarketECDataContext DB = null;
             try
             {
                 using (DB = new BDMarketECDataContext())
                 {
-                    DB.cp_InsertarCategoria(oc.Categoria, oc.Descripcion);
+                    DB.cp_InsertarCategoria(oc.Nombre, oc.Descripcion);
                     DB.SubmitChanges();
                 }
             }
@@ -69,14 +69,14 @@ namespace Datos.Inventario
             }
 
         }
-        public static void ActualizarCategoria(ECategoria oc)
+        public static void ActualizarCategoria(Categoria oc)
         {
             BDMarketECDataContext DB = null;
             try
             {
                 using (DB = new BDMarketECDataContext())
                 {
-                    DB.cp_ActualizarCategoria(oc.IdCategoria, oc.Categoria, oc.Descripcion);
+                    DB.cp_ActualizarCategoria(oc.IdCategoria, oc.Nombre, oc.Descripcion);
                     DB.SubmitChanges();
                 }
             }
@@ -90,7 +90,7 @@ namespace Datos.Inventario
             }
         }
 
-        public static void EliminarCategoria(ECategoria oc)
+        public static void EliminarCategoria(Categoria oc)
         {
             BDMarketECDataContext DB = null;
             try

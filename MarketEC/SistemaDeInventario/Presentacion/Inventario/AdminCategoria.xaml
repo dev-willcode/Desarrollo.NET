@@ -1,0 +1,38 @@
+﻿<Window x:Class="Presentacion.Inventario.AdminCategoria"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:Inventario="clr-namespace:Entidades.Inventario;assembly=Entidades" 
+        mc:Ignorable="d"
+        Title="Categorias" Height="450" Width="800" 
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <CollectionViewSource x:Key="categoriaViewSource" d:DesignSource="{d:DesignInstance {x:Type Inventario:Categoria}, CreateList=True}"/>
+    </Window.Resources>
+    <DockPanel>
+        <Label Content="Administración de categorias" DockPanel.Dock="Top" FontSize="25" HorizontalContentAlignment="Center"/>
+        <Grid DockPanel.Dock="Bottom" Height="60" Margin="20,20,20,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Añadir categoria" Click="BtnAnadir"></Button>
+            <Button Grid.Column="1" Content="Editar Categoria" Click="BtnModificar"></Button>
+            <Button Grid.Column="2" Content="Eliminar categoria" Click="BtnEliminar"></Button>
+            <Button Grid.Column="3" Content="Salir" Click="BtnSalir"></Button>
+        </Grid>
+        <DockPanel DataContext="{StaticResource categoriaViewSource}">
+            <DataGrid x:Name="categoriaDataGrid" ColumnWidth="*" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="20" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeRows="False" GridLinesVisibility="Horizontal" SelectionMode="Single" IsSynchronizedWithCurrentItem="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="idCategoriaColumn" Binding="{Binding IdCategoria}" Header="Id" Width="30" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="nombreColumn" Binding="{Binding Nombre}" Header="Nombre" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="descripcionColumn" Binding="{Binding Descripcion}" Header="Descripcion" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </DockPanel>
+    </DockPanel>
+</Window>
