@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Presentación</RootNamespace>
     <AssemblyName>Presentación</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -106,6 +107,12 @@
     <Compile Include="Inventario\frmAdminCategoria.Designer.cs">
       <DependentUpon>frmAdminCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventario\frmAdminProductoCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frmAdminProductoCategoria.Designer.cs">
+      <DependentUpon>frmAdminProductoCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventario\frmAdminProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +175,9 @@
     <EmbeddedResource Include="Inventario\frmAdminCategoria.resx">
       <DependentUpon>frmAdminCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frmAdminProductoCategoria.resx">
+      <DependentUpon>frmAdminProductoCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inventario\frmAdminProducto.resx">
       <DependentUpon>frmAdminProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,7 +201,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\Entidades.ClasePersonalizada.ProductoCategoria.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

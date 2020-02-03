@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Entidades.ClasePersonalizada;
 using Entidades.Inventario;
 using Lógica.Inventario;
 
@@ -13,7 +14,7 @@ namespace Presentación.Inventario
             CenterToScreen();
         }
         public int opc;
-        public Producto aoc = new Producto();
+        public ProductoCategoria aoc = new ProductoCategoria();
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -45,7 +46,7 @@ namespace Presentación.Inventario
         public Producto crearObjeto()
         {
             int id = aoc.IdProducto;
-            int cat = int.Parse(cBidCategoria.SelectedValue.ToString());
+            int cat = int.Parse(comboCategoria.SelectedValue.ToString());
             string nom = txtNombre.Text;
             string unidad = txtUnidad.Text;
             decimal precioProv = decimal.Parse(txtPrecio.Text);
@@ -77,15 +78,29 @@ namespace Presentación.Inventario
 
         private void frmEditProducto_Load(object sender, EventArgs e)
         {
+            mostrarCategorias();
+            mostrarProveedores();
             if (opc == 2 && aoc != null)
             {
                 verDatos();
-                cBidCategoria.DataSource = CategoriaLN.mostrarCategorias();
-                cBidCategoria.SelectedIndex = 0;
-                cBidCategoria.DisplayMember = "Nombre";
-                cBidCategoria.ValueMember = "IdCategoria";
             }
 
+        }
+
+        private void mostrarProveedores()
+        {
+            comboProveedor.DataSource = ProveedorLN.MostrarProveedor();
+            comboProveedor.SelectedIndex = 0;
+            comboProveedor.DisplayMember = "nombre";
+            comboProveedor.ValueMember = "idProveedor";
+        }
+
+        private void mostrarCategorias()
+        {
+            comboCategoria.DataSource = CategoriaLN.mostrarCategorias();
+            comboCategoria.SelectedIndex = 0;
+            comboCategoria.DisplayMember = "Nombre";
+            comboCategoria.ValueMember = "IdCategoria";
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

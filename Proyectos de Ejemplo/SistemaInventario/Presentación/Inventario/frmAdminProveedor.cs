@@ -23,7 +23,7 @@ namespace Presentación.Inventario
 
         public void mostrarDatos(string buscar)
         {
-            dataGridView1.DataSource = oC.MostrarProveedorFitro(buscar);
+            dataGridView1.DataSource = ProveedorLN.MostrarProveedorFitro(buscar);
         }
 
         public void nuevo()

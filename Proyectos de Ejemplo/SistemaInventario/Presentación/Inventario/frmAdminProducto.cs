@@ -96,7 +96,7 @@ namespace Presentación.Inventario
                     frmEditProducto fec = new frmEditProducto();
                     fec.Text = "Actualizar Producto";
                     fec.opc = 2;
-                    fec.aoc = dataGridView1.CurrentRow.DataBoundItem as Producto;
+                    //fec.aoc = dataGridView1.CurrentRow.DataBoundItem as Producto;
                     fec.ShowDialog();
                     if (fec.DialogResult == DialogResult.OK)
                     {

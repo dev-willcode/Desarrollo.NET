@@ -40,9 +40,9 @@ namespace Presentación
 
         private void administrarProductoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms["frmAdminProducto"] == null)
+            if (Application.OpenForms["frmAdminProductoCategoria"] == null)
             {
-                frmAdminProducto f = new frmAdminProducto
+                frmAdminProductoCategoria f = new frmAdminProductoCategoria
                 {
                     MdiParent = this
                 };

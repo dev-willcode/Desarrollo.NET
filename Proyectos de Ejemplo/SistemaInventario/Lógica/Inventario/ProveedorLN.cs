@@ -8,7 +8,7 @@ namespace Lógica.Inventario
 {
     public class ProveedorLN
     {
-        public List<Proveedor> MostrarProveedorFitro(string busqueda)
+        public static List<Proveedor> MostrarProveedorFitro(string busqueda)
         {
             List<Proveedor> Lista = new List<Proveedor>();
             Proveedor oc;
@@ -29,7 +29,7 @@ namespace Lógica.Inventario
             }
             return Lista;
         }
-        public List<Proveedor> MostrarProveedor()
+        public static List<Proveedor> MostrarProveedor()
         {
             List<Proveedor> Lista = new List<Proveedor>();
             Proveedor oc;

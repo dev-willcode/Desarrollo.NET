@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Datos</RootNamespace>
     <AssemblyName>Datos</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,6 +48,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDMarket.dbml</DependentUpon>
     </Compile>
+    <Compile Include="ClasePersonalizada\ProductoCategoriaCD.cs" />
     <Compile Include="DatosExcepciones.cs" />
     <Compile Include="Facturacion\OrdenCD.cs" />
     <Compile Include="Facturacion\GuiaCD.cs" />
