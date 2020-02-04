@@ -29,8 +29,31 @@ namespace Presentación.Inventario
             txtStockA.Text = aoc.StockActual.ToString();
             txtStockM.Text = aoc.StockMinimo.ToString();
             txtUnidad.Text = aoc.UnidadMedida;
+            comboCategoria.SelectedIndex = buscarIndice(comboCategoria, aoc.Categoria);
+            comboProveedor.SelectedIndex = buscarIndice(comboProveedor, aoc.Proveedor);
         }
 
+        private int buscarIndice(ComboBox combobox, string value)
+        {
+            foreach (object item in combobox.Items)
+            {
+                if (item.GetType() == typeof(Categoria))
+                {
+                    if ((item as Categoria).Nombre.Equals(value))
+                    {
+                        return combobox.Items.IndexOf(item);
+                    }
+                }
+                else
+                {
+                    if ((item as Proveedor).Nombre.Equals(value))
+                    {
+                        return combobox.Items.IndexOf(item);
+                    }
+                }
+            }
+            return -1;
+        }
 
         private bool validarDatos()
         {
@@ -43,10 +66,10 @@ namespace Presentación.Inventario
             return verificar;
         }
 
-        public Producto crearObjeto()
+        public Producto crearProducto()
         {
             int id = aoc.IdProducto;
-            int cat = int.Parse(comboCategoria.SelectedValue.ToString());
+            int cat = (int)comboCategoria.SelectedValue;
             string nom = txtNombre.Text;
             string unidad = txtUnidad.Text;
             decimal precioProv = decimal.Parse(txtPrecio.Text);
@@ -54,6 +77,14 @@ namespace Presentación.Inventario
             short stockM = short.Parse(txtStockM.Text);
             decimal precioV = decimal.Parse(txtPrecioV.Text);
             Producto oc = new Producto(id, cat, nom, unidad, precioProv, stockA, stockM, precioV);
+            return oc;
+        }
+
+        public ProveedorProducto crearProveedorProducto(int id)
+        {
+            int idProveedor = (int)comboProveedor.SelectedValue;
+            DateTime fecha = DateTime.Today;
+            ProveedorProducto oc = new ProveedorProducto(id, idProveedor, fecha);
             return oc;
         }
 

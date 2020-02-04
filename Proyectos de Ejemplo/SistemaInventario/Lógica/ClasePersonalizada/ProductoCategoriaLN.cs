@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Datos;
 using Datos.ClasePersonalizada;
 using Entidades.ClasePersonalizada;
+using Entidades.Inventario;
 
 namespace Lógica.ClasePersonalizada
 {
@@ -21,8 +19,8 @@ namespace Lógica.ClasePersonalizada
                 foreach (SP_ListarProductoCategoriaFiltroResult aux in auxLista)
                 {
                     oc = new ProductoCategoria(
-                        aux.IdProducto, 
-                        aux.Categoria, 
+                        aux.IdProducto,
+                        aux.Categoria,
                         aux.Nombre,
                         aux.Proveedor,
                         aux.UnidadMedida,

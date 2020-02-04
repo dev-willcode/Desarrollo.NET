@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +50,7 @@
     <Compile Include="Facturacion\LocalLN.cs" />
     <Compile Include="Inventario\ProductoLN.cs" />
     <Compile Include="Inventario\ProveedorLN.cs" />
+    <Compile Include="Inventario\ProveedorProductoLN.cs" />
     <Compile Include="LogicaExcepciones.cs" />
     <Compile Include="Inventario\CategoriaLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

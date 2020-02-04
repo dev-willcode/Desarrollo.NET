@@ -46,16 +46,23 @@ namespace Datos.Inventario
                 DB = null;
             }
         }
-        public static void InsertarProducto(Producto oc)
+        public static int InsertarProducto(Producto oc)
         {
             BDMarketDataContext DB = null;
             try
             {
                 using (DB = new BDMarketDataContext())
                 {
-                    DB.SP_InsertarProducto(oc.IdCategoria, oc.Nombre, oc.UnidadMedida, oc.PrecioProveedor,
-                    oc.StockActual, oc.StockMinimo, oc.PrecioVenta);
+                    DB.SP_InsertarProducto(
+                        oc.IdCategoria,
+                        oc.Nombre,
+                        oc.UnidadMedida,
+                        oc.PrecioProveedor,
+                        oc.StockActual,
+                        oc.StockMinimo,
+                        oc.PrecioVenta);
                     DB.SubmitChanges();
+                    return ProductoCD.GetProducto(oc.IdCategoria, oc.Nombre).IdProducto;
                 }
             }
             catch (Exception ex)
@@ -68,6 +75,37 @@ namespace Datos.Inventario
             }
 
         }
+
+        private static Producto GetProducto(int idCategoria, string nombre)
+        {
+            BDMarketDataContext DB = null;
+            try
+            {
+                using (DB = new BDMarketDataContext())
+                {
+                    SP_GetProductoResult aux = DB.SP_GetProducto(idCategoria, nombre).ToList()[0];
+                    return new Producto(
+                        aux.IdProducto,
+                        aux.IdCategoria,
+                        aux.Nombre,
+                        aux.UnidadMedida,
+                        aux.PrecioProveedor,
+                        aux.StockActual,
+                        aux.StockMinimo,
+                        aux.PrecioVenta);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new DatosExcepciones("Error al actualizar Producto.", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
+
+
         public static void ActualizarProducto(Producto oc)
         {
             BDMarketDataContext DB = null;
@@ -75,8 +113,15 @@ namespace Datos.Inventario
             {
                 using (DB = new BDMarketDataContext())
                 {
-                    DB.SP_ActualizarProducto(oc.IdProducto, oc.IdCategoria, oc.Nombre, oc.UnidadMedida, oc.PrecioProveedor,
-                    oc.StockActual, oc.StockMinimo, oc.PrecioVenta);
+                    DB.SP_ActualizarProducto(
+                        oc.IdProducto, 
+                        oc.IdCategoria,
+                        oc.Nombre,
+                        oc.UnidadMedida,
+                        oc.PrecioProveedor,
+                        oc.StockActual,
+                        oc.StockMinimo,
+                        oc.PrecioVenta);
                     DB.SubmitChanges();
                 }
             }

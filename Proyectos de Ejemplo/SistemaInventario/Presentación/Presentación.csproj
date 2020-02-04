@@ -113,12 +113,6 @@
     <Compile Include="Inventario\frmAdminProductoCategoria.Designer.cs">
       <DependentUpon>frmAdminProductoCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inventario\frmAdminProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Inventario\frmAdminProducto.Designer.cs">
-      <DependentUpon>frmAdminProducto.cs</DependentUpon>
-    </Compile>
     <Compile Include="Inventario\frmAdminProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,9 +171,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\frmAdminProductoCategoria.resx">
       <DependentUpon>frmAdminProductoCategoria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Inventario\frmAdminProducto.resx">
-      <DependentUpon>frmAdminProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\frmAdminProveedor.resx">
       <DependentUpon>frmAdminProveedor.cs</DependentUpon>

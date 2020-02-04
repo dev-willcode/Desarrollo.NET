@@ -131,17 +131,6 @@
     <Parameter Name="fax" Type="System.String" DbType="VarChar(15)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.SP_ActualizarProducto" Method="SP_ActualizarProducto">
-    <Parameter Name="idProducto" Type="System.Int32" DbType="Int" />
-    <Parameter Name="idCategoria" Type="System.Int32" DbType="Int" />
-    <Parameter Name="nombre" Type="System.String" DbType="VarChar(40)" />
-    <Parameter Name="unidadMedida" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="precioProveedor" Type="System.Decimal" DbType="Money" />
-    <Parameter Name="stockActual" Type="System.Int16" DbType="SmallInt" />
-    <Parameter Name="stockMinimo" Type="System.Int16" DbType="SmallInt" />
-    <Parameter Name="precioVenta" Type="System.Decimal" DbType="Money" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.SP_ActualizarProveedor" Method="SP_ActualizarProveedor">
     <Parameter Name="idProveedor" Type="System.Int32" DbType="Int" />
     <Parameter Name="cedProveedor" Type="System.String" DbType="VarChar(10)" />
@@ -180,16 +169,6 @@
     <Parameter Name="ciudad" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="telefono" Type="System.String" DbType="VarChar(15)" />
     <Parameter Name="fax" Type="System.String" DbType="VarChar(15)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.SP_InsertarProducto" Method="SP_InsertarProducto">
-    <Parameter Name="idcat" Type="System.Int32" DbType="Int" />
-    <Parameter Name="nombre" Type="System.String" DbType="VarChar(40)" />
-    <Parameter Name="unidadMedida" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="precioProveedor" Type="System.Decimal" DbType="Money" />
-    <Parameter Name="stockActual" Type="System.Int16" DbType="SmallInt" />
-    <Parameter Name="stockMinimo" Type="System.Int16" DbType="SmallInt" />
-    <Parameter Name="precioVenta" Type="System.Decimal" DbType="Money" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.SP_InsertarProveedor" Method="SP_InsertarProveedor">
@@ -348,5 +327,58 @@
       <Column Name="StockMinimo" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Column Name="PrecioVenta" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.SP_Insertar_RelProveedorProducto" Method="SP_Insertar_RelProveedorProducto">
+    <Parameter Name="idProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idProveedor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Eliminar_RelProveedorProducto" Method="SP_Eliminar_RelProveedorProducto">
+    <Parameter Name="idProducto" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ActualizarRelProveedorProducto" Method="SP_ActualizarRelProveedorProducto">
+    <Parameter Name="idProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idProveedor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_InsertarProducto" Method="SP_InsertarProducto">
+    <Parameter Name="idcat" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="unidadMedida" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="precioProveedor" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="stockActual" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="stockMinimo" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="precioVenta" Type="System.Decimal" DbType="Money" />
+    <ElementType Name="SP_InsertarProductoResult">
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_GetProducto" Method="SP_GetProducto">
+    <Parameter Name="idCat" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(40)" />
+    <ElementType Name="SP_GetProductoResult">
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="UnidadMedida" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PrecioProveedor" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="StockActual" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="StockMinimo" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PrecioVenta" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ActualizarProducto" Method="SP_ActualizarProducto">
+    <Parameter Name="idProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCategoria" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="unidadMedida" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="precioProveedor" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="stockActual" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="stockMinimo" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="precioVenta" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

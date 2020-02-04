@@ -50,12 +50,11 @@ namespace Lógica.Inventario
             }
             return Lista;
         }
-        public bool CreateProducto(Producto oc)
+        public int CreateProducto(Producto oc)
         {
             try
             {
-                ProductoCD.InsertarProducto(oc);
-                return true;
+                return ProductoCD.InsertarProducto(oc);
             }
             catch (Exception ex)
             {

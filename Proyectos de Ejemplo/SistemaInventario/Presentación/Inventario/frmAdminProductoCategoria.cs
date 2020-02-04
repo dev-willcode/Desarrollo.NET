@@ -15,13 +15,13 @@ namespace Presentación.Inventario
             Text = "Administrador Producto";
             CenterToScreen();
         }
-
-        ProductoCategoriaLN oC = new ProductoCategoriaLN();
-        ProductoLN oCP = new ProductoLN();
+        ProveedorProductoLN ProveedorProductoLN = new ProveedorProductoLN();
+        ProductoCategoriaLN ProductoCategoriaLN = new ProductoCategoriaLN();
+        ProductoLN ProductoLN = new ProductoLN();
 
         public void mostrarDatos(string buscar)
         {
-            dataGridView1.DataSource = oC.MostrarProductoCategoriaFitro(buscar);
+            dataGridView1.DataSource = ProductoCategoriaLN.MostrarProductoCategoriaFitro(buscar);
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -44,8 +44,9 @@ namespace Presentación.Inventario
                 fec.ShowDialog();
                 if (fec.DialogResult == DialogResult.OK)
                 {
-                    Producto oc = fec.crearObjeto();
-                    oCP.CreateProducto(oc);
+                    Producto oc = fec.crearProducto();
+                    int idInsertada = ProductoLN.CreateProducto(oc);
+                    ProveedorProductoLN.CreateProveedorProducto(fec.crearProveedorProducto(idInsertada));
                     fec.Close();
                     toolStripLabel1.Text = "Se ha ingresado el producto...";
                 }
@@ -71,8 +72,9 @@ namespace Presentación.Inventario
                     DialogResult res = MessageBox.Show("¿Esta seguro de eliminar?", "Eliminar", MessageBoxButtons.YesNo);
                     if (res.ToString().Equals("Yes"))
                     {
-                        Producto oc = dataGridView1.CurrentRow.DataBoundItem as Producto;
-                        if (oCP.DeleteProducto(oc))
+                        ProductoCategoria oc = dataGridView1.CurrentRow.DataBoundItem as ProductoCategoria;
+                        ProveedorProductoLN.DeleteProveedorProducto(oc.IdProducto);
+                        if (ProductoLN.DeleteProducto(new Producto(oc.IdProducto)))
                         {
                             toolStripLabel1.Text = "Se ha eliminado el producto seleccionado...";
                         }
@@ -103,8 +105,9 @@ namespace Presentación.Inventario
                     fec.ShowDialog();
                     if (fec.DialogResult == DialogResult.OK)
                     {
-                        Producto oc = fec.crearObjeto();
-                        oCP.UpdateProducto(oc);
+                        Producto oc = fec.crearProducto();
+                        ProductoLN.UpdateProducto(oc);
+                        ProveedorProductoLN.UpdateProveedorProducto(fec.crearProveedorProducto(oc.IdProducto));
                         fec.Close();
                         toolStripLabel1.Text = "Se ha actualizado el producto...";
                     }

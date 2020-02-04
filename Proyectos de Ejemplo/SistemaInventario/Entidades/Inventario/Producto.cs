@@ -15,6 +15,11 @@
         {
         }
 
+        public Producto(int idProducto)
+        {
+            this.idProducto = idProducto;
+        }
+
         public Producto(int idProducto, int idCategoria, string nombre, string unidadMedida,
             decimal precioProveedor, short stockActual, short stockMinimo, decimal precioVenta)
         {

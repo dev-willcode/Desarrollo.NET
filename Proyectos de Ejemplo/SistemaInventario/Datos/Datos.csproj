@@ -56,6 +56,7 @@
     <Compile Include="Facturacion\LocalCD.cs" />
     <Compile Include="Inventario\CategoriaCD.cs" />
     <Compile Include="Inventario\ProductoCD.cs" />
+    <Compile Include="Inventario\ProveedorProductoCD.cs" />
     <Compile Include="Inventario\ProveedorCD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

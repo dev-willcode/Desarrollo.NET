@@ -51,6 +51,7 @@
     <Compile Include="Inventario\Categoria.cs" />
     <Compile Include="Inventario\Producto.cs" />
     <Compile Include="Inventario\Proveedor.cs" />
+    <Compile Include="Inventario\ProveedorProducto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
