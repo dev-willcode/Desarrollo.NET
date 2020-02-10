@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Datos;
 using Datos.ClasePersonalizada;
 using Entidades.ClasePersonalizada;
-using Entidades.Inventario;
 
 namespace Lógica.ClasePersonalizada
 {

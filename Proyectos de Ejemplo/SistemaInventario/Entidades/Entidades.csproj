@@ -45,6 +45,7 @@
     <Compile Include="ClasePersonalizada\ProductoCategoria.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Facturacion\Guia.cs" />
+    <Compile Include="Facturacion\GuiaDetalle.cs" />
     <Compile Include="Facturacion\Local.cs" />
     <Compile Include="Facturacion\Orden.cs" />
     <Compile Include="Facturacion\Transportista.cs" />

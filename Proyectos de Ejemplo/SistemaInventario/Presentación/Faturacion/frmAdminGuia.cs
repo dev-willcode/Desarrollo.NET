@@ -38,7 +38,11 @@ namespace Presentación.Faturacion
                 if (fec.DialogResult == DialogResult.OK)
                 {
                     Guia oc = fec.crearObjeto();
-                    oC.CreateGuia(oc);
+                    if  (oC.CreateGuia(oc))
+                    {
+                        oc = oC.GetGuia(oc);
+                        oC.InsertarGuiaDetalle(fec.obtenerListadoDetalle(oc.IdGuia));
+                    }
                     fec.Close();
                     toolStripLabel1.Text = "Se ha ingresado un Guia...";
                 }

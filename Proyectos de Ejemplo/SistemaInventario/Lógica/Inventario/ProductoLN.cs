@@ -39,8 +39,8 @@ namespace Lógica.Inventario
                 foreach (PRODUCTO aux in auxLista)
                 {
 
-                    oc = new Producto(aux.IdProducto, aux.IdCategoria, aux.Nombre, aux.UnidadMedida, aux.PrecioProveedor.Value,
-                    aux.StockActual.Value, aux.StockMinimo.Value, aux.PrecioVenta.Value);
+                    oc = new Producto(aux.IdProducto, aux.IdCategoria, aux.Nombre, aux.UnidadMedida, aux.PrecioProveedor,
+                    aux.StockActual, aux.StockMinimo, aux.PrecioVenta);
                     Lista.Add(oc);
                 }
             }

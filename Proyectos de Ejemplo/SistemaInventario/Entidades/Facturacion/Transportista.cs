@@ -6,7 +6,7 @@
         {
         }
 
-        public Transportista(string idTransportista, string cedTransportista, string nombre, string direccion, string ciudad, string telefono)
+        public Transportista(int idTransportista, string cedTransportista, string nombre, string direccion, string ciudad, string telefono)
         {
             IdTransportista = idTransportista;
             CedTransportista = cedTransportista;
@@ -16,7 +16,7 @@
             Telefono = telefono;
         }
 
-        public string IdTransportista { get; set; }
+        public int IdTransportista { get; set; }
         public string CedTransportista { get; set; }
         public string Nombre { get; set; }
         public string Direccion { get; set; }

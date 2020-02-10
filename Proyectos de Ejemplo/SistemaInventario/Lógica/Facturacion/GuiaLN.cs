@@ -60,6 +60,56 @@ namespace Lógica.Facturacion
             }
             return Lista;
         }
+
+        public List<GuiaDetalle> ListarGuiaDetalle(int idGuia)
+        {
+            List<GuiaDetalle> Lista = new List<GuiaDetalle>();
+            GuiaDetalle oc;
+            try
+            {
+                List<SP_ListarGuiaDetalleResult> auxLista = GuiaCD.ListarGuiaDetalle(idGuia);
+                auxLista.ForEach(aux =>
+                {
+                    oc = new GuiaDetalle(
+                        aux.IdGuia,
+                        aux.IdProducto,
+                        aux.Cantidad,
+                        aux.Subtotal.GetValueOrDefault());
+                    Lista.Add(oc);
+                });
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw new LogicaExcepciones("Error al listar Guia.", ex);
+            }
+        }
+
+        public void InsertarGuiaDetalle(List<GuiaDetalle> list)
+        {
+            try
+            {
+                GuiaCD.InsertarGuiaDetalle(list);
+            }
+            catch (Exception ex)
+            {
+                throw new LogicaExcepciones("Error al insertar los detalles", ex);
+            }
+        }
+
+        public Guia GetGuia(Guia oc)
+        {
+            try
+            {
+                return GuiaCD.GetGuia(oc);
+            }
+            catch (Exception ex)
+            {
+                throw new LogicaExcepciones("Error al obtener la Guia.", ex);
+            }
+
+        }
+
         public bool CreateGuia(Guia oc)
         {
             try

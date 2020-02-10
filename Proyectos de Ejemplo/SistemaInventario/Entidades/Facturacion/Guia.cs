@@ -7,7 +7,7 @@ namespace Entidades.Facturacion
         private int idGuia;
         private int idLocal;
         private DateTime fechaSalida;
-        private string transportista;
+        private int transportista;
         private decimal total;
         private int cantidad_item;
 
@@ -15,7 +15,7 @@ namespace Entidades.Facturacion
         {
         }
 
-        public Guia(int idGuia, int idLocal, DateTime fechaSalida, string transportista, decimal total, int cantidad_item)
+        public Guia(int idGuia, int idLocal, DateTime fechaSalida, int transportista, decimal total, int cantidad_item)
         {
             IdGuia = idGuia;
             IdLocal = idLocal;
@@ -28,7 +28,7 @@ namespace Entidades.Facturacion
         public int IdGuia { get => idGuia; set => idGuia = value; }
         public int IdLocal { get => idLocal; set => idLocal = value; }
         public DateTime FechaSalida { get => fechaSalida; set => fechaSalida = value; }
-        public string Transportista { get => transportista; set => transportista = value; }
+        public int Transportista { get => transportista; set => transportista = value; }
         public decimal Total { get => total; set => total = value; }
         public int Cantidad_item { get => cantidad_item; set => cantidad_item = value; }
     }

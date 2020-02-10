@@ -30,6 +30,9 @@ namespace Datos
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnCreated();
+    partial void InsertTRANSPORTISTA(TRANSPORTISTA instance);
+    partial void UpdateTRANSPORTISTA(TRANSPORTISTA instance);
+    partial void DeleteTRANSPORTISTA(TRANSPORTISTA instance);
     partial void InsertCATEGORIA(CATEGORIA instance);
     partial void UpdateCATEGORIA(CATEGORIA instance);
     partial void DeleteCATEGORIA(CATEGORIA instance);
@@ -54,9 +57,6 @@ namespace Datos
     partial void InsertPROVEEDOR(PROVEEDOR instance);
     partial void UpdatePROVEEDOR(PROVEEDOR instance);
     partial void DeletePROVEEDOR(PROVEEDOR instance);
-    partial void InsertTRANSPORTISTA(TRANSPORTISTA instance);
-    partial void UpdateTRANSPORTISTA(TRANSPORTISTA instance);
-    partial void DeleteTRANSPORTISTA(TRANSPORTISTA instance);
     #endregion
 		
 		public BDMarketDataContext() : 
@@ -87,6 +87,14 @@ namespace Datos
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<TRANSPORTISTA> TRANSPORTISTA
+		{
+			get
+			{
+				return this.GetTable<TRANSPORTISTA>();
+			}
 		}
 		
 		public System.Data.Linq.Table<CATEGORIA> CATEGORIA
@@ -158,14 +166,6 @@ namespace Datos
 			get
 			{
 				return this.GetTable<PROVEEDOR>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TRANSPORTISTA> TRANSPORTISTA
-		{
-			get
-			{
-				return this.GetTable<TRANSPORTISTA>();
 			}
 		}
 		
@@ -295,20 +295,6 @@ namespace Datos
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_EliminarTransportista")]
-		public int SP_EliminarTransportista([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTransportista", DbType="VarChar(30)")] string idTransportista)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idTransportista);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_InsertarGuia")]
-		public int SP_InsertarGuia([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdLocal", DbType="Int")] System.Nullable<int> idLocal, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaSalida", DbType="DateTime")] System.Nullable<System.DateTime> fechaSalida, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Transportista", DbType="VarChar(30)")] string transportista, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Money")] System.Nullable<decimal> total, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantidad_Item)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idLocal, fechaSalida, transportista, total, cantidad_Item);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_InsertarOrden")]
 		public int SP_InsertarOrden([global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaOrden", DbType="DateTime")] System.Nullable<System.DateTime> fechaOrden, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaEntrada", DbType="DateTime")] System.Nullable<System.DateTime> fechaEntrada)
 		{
@@ -316,46 +302,11 @@ namespace Datos
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_InsertarTransportista")]
-		public int SP_InsertarTransportista([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTransportista", DbType="VarChar(30)")] string idTransportista, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CedTransportista", DbType="VarChar(10)")] string cedTransportista, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(40)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Direccion", DbType="VarChar(60)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ciudad", DbType="VarChar(15)")] string ciudad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Telefono", DbType="VarChar(15)")] string telefono)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idTransportista, cedTransportista, nombre, direccion, ciudad, telefono);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ListarGuia_Filtro")]
-		public ISingleResult<SP_ListarGuia_FiltroResult> SP_ListarGuia_Filtro([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Valor", DbType="VarChar(40)")] string valor)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
-			return ((ISingleResult<SP_ListarGuia_FiltroResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ListarOrden_Filtro")]
 		public ISingleResult<SP_ListarOrden_FiltroResult> SP_ListarOrden_Filtro([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Valor", DbType="VarChar(40)")] string valor)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
 			return ((ISingleResult<SP_ListarOrden_FiltroResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ListarTransportista_Filtro")]
-		public ISingleResult<SP_ListarTransportista_FiltroResult> SP_ListarTransportista_Filtro([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Valor", DbType="VarChar(40)")] string valor)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
-			return ((ISingleResult<SP_ListarTransportista_FiltroResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ActualizarTransportista")]
-		public int SP_ActualizarTransportista([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string idTransportista, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedTransportista, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(40)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string ciudad, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefono)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idTransportista, cedTransportista, nombre, direccion, ciudad, telefono);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ActualizarGuia")]
-		public int SP_ActualizarGuia([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdGuia", DbType="Int")] System.Nullable<int> idGuia, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdLocal", DbType="Int")] System.Nullable<int> idLocal, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaSalida", DbType="DateTime")] System.Nullable<System.DateTime> fechaSalida, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Transportista", DbType="VarChar(30)")] string transportista, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Money")] System.Nullable<decimal> total, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantidad_Item)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idGuia, idLocal, fechaSalida, transportista, total, cantidad_Item);
-			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ListarProductoCategoriaFiltro")]
@@ -405,6 +356,286 @@ namespace Datos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idProducto, idCategoria, nombre, unidadMedida, precioProveedor, stockActual, stockMinimo, precioVenta);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ActualizarTransportista")]
+		public int SP_ActualizarTransportista([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idTransportista, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedTransportista, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(40)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string ciudad, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefono)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idTransportista, cedTransportista, nombre, direccion, ciudad, telefono);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_EliminarTransportista")]
+		public int SP_EliminarTransportista([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTransportista", DbType="Int")] System.Nullable<int> idTransportista)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idTransportista);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_InsertarTransportista")]
+		public int SP_InsertarTransportista([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTransportista", DbType="Int")] System.Nullable<int> idTransportista, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CedTransportista", DbType="VarChar(10)")] string cedTransportista, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(40)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Direccion", DbType="VarChar(60)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ciudad", DbType="VarChar(15)")] string ciudad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Telefono", DbType="VarChar(15)")] string telefono)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idTransportista, cedTransportista, nombre, direccion, ciudad, telefono);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_InsertarGuia")]
+		public int SP_InsertarGuia([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdLocal", DbType="Int")] System.Nullable<int> idLocal, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaSalida", DbType="DateTime")] System.Nullable<System.DateTime> fechaSalida, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Transportista", DbType="Int")] System.Nullable<int> transportista, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Money")] System.Nullable<decimal> total, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantidad_Item)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idLocal, fechaSalida, transportista, total, cantidad_Item);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ActualizarGuia")]
+		public int SP_ActualizarGuia([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdGuia", DbType="Int")] System.Nullable<int> idGuia, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdLocal", DbType="Int")] System.Nullable<int> idLocal, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaSalida", DbType="DateTime")] System.Nullable<System.DateTime> fechaSalida, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Transportista", DbType="Int")] System.Nullable<int> transportista, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Money")] System.Nullable<decimal> total, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantidad_Item)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idGuia, idLocal, fechaSalida, transportista, total, cantidad_Item);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ListarTransportista_Filtro")]
+		public ISingleResult<SP_ListarTransportista_FiltroResult> SP_ListarTransportista_Filtro([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Valor", DbType="VarChar(40)")] string valor)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
+			return ((ISingleResult<SP_ListarTransportista_FiltroResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ListarGuia_Filtro")]
+		public ISingleResult<SP_ListarGuia_FiltroResult> SP_ListarGuia_Filtro([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Valor", DbType="VarChar(40)")] string valor)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
+			return ((ISingleResult<SP_ListarGuia_FiltroResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_GetGuia")]
+		public ISingleResult<SP_GetGuiaResult> SP_GetGuia([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idLocal, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idTransportista, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> total, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantidad_item)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idLocal, idTransportista, total, cantidad_item);
+			return ((ISingleResult<SP_GetGuiaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_InsertarGuiaDetalle")]
+		public int SP_InsertarGuiaDetalle([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idGuia, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idProducto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantidad, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> subtotal)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idGuia, idProducto, cantidad, subtotal);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ListarGuiaDetalle")]
+		public ISingleResult<SP_ListarGuiaDetalleResult> SP_ListarGuiaDetalle([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idGuia)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idGuia);
+			return ((ISingleResult<SP_ListarGuiaDetalleResult>)(result.ReturnValue));
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TRANSPORTISTA")]
+	public partial class TRANSPORTISTA : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdTransportista;
+		
+		private string _CedTransportista;
+		
+		private string _Nombre;
+		
+		private string _Direccion;
+		
+		private string _Ciudad;
+		
+		private string _Telefono;
+		
+		private EntitySet<GUIA> _GUIA;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdTransportistaChanging(int value);
+    partial void OnIdTransportistaChanged();
+    partial void OnCedTransportistaChanging(string value);
+    partial void OnCedTransportistaChanged();
+    partial void OnNombreChanging(string value);
+    partial void OnNombreChanged();
+    partial void OnDireccionChanging(string value);
+    partial void OnDireccionChanged();
+    partial void OnCiudadChanging(string value);
+    partial void OnCiudadChanged();
+    partial void OnTelefonoChanging(string value);
+    partial void OnTelefonoChanged();
+    #endregion
+		
+		public TRANSPORTISTA()
+		{
+			this._GUIA = new EntitySet<GUIA>(new Action<GUIA>(this.attach_GUIA), new Action<GUIA>(this.detach_GUIA));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdTransportista", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int IdTransportista
+		{
+			get
+			{
+				return this._IdTransportista;
+			}
+			set
+			{
+				if ((this._IdTransportista != value))
+				{
+					this.OnIdTransportistaChanging(value);
+					this.SendPropertyChanging();
+					this._IdTransportista = value;
+					this.SendPropertyChanged("IdTransportista");
+					this.OnIdTransportistaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CedTransportista", DbType="VarChar(10)")]
+		public string CedTransportista
+		{
+			get
+			{
+				return this._CedTransportista;
+			}
+			set
+			{
+				if ((this._CedTransportista != value))
+				{
+					this.OnCedTransportistaChanging(value);
+					this.SendPropertyChanging();
+					this._CedTransportista = value;
+					this.SendPropertyChanged("CedTransportista");
+					this.OnCedTransportistaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(40)")]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this.OnNombreChanging(value);
+					this.SendPropertyChanging();
+					this._Nombre = value;
+					this.SendPropertyChanged("Nombre");
+					this.OnNombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Direccion", DbType="VarChar(60)")]
+		public string Direccion
+		{
+			get
+			{
+				return this._Direccion;
+			}
+			set
+			{
+				if ((this._Direccion != value))
+				{
+					this.OnDireccionChanging(value);
+					this.SendPropertyChanging();
+					this._Direccion = value;
+					this.SendPropertyChanged("Direccion");
+					this.OnDireccionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ciudad", DbType="VarChar(15)")]
+		public string Ciudad
+		{
+			get
+			{
+				return this._Ciudad;
+			}
+			set
+			{
+				if ((this._Ciudad != value))
+				{
+					this.OnCiudadChanging(value);
+					this.SendPropertyChanging();
+					this._Ciudad = value;
+					this.SendPropertyChanged("Ciudad");
+					this.OnCiudadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefono", DbType="VarChar(15)")]
+		public string Telefono
+		{
+			get
+			{
+				return this._Telefono;
+			}
+			set
+			{
+				if ((this._Telefono != value))
+				{
+					this.OnTelefonoChanging(value);
+					this.SendPropertyChanging();
+					this._Telefono = value;
+					this.SendPropertyChanged("Telefono");
+					this.OnTelefonoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TRANSPORTISTA_GUIA", Storage="_GUIA", ThisKey="IdTransportista", OtherKey="Transportista")]
+		public EntitySet<GUIA> GUIA
+		{
+			get
+			{
+				return this._GUIA;
+			}
+			set
+			{
+				this._GUIA.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_GUIA(GUIA entity)
+		{
+			this.SendPropertyChanging();
+			entity.TRANSPORTISTA1 = this;
+		}
+		
+		private void detach_GUIA(GUIA entity)
+		{
+			this.SendPropertyChanging();
+			entity.TRANSPORTISTA1 = null;
 		}
 	}
 	
@@ -558,7 +789,7 @@ namespace Datos
 		
 		private System.DateTime _FechaSalida;
 		
-		private string _Transportista;
+		private int _Transportista;
 		
 		private System.Nullable<decimal> _Total;
 		
@@ -566,9 +797,9 @@ namespace Datos
 		
 		private EntitySet<GUIA_DETALLE> _GUIA_DETALLE;
 		
-		private EntityRef<LOCAL> _LOCAL;
-		
 		private EntityRef<TRANSPORTISTA> _TRANSPORTISTA1;
+		
+		private EntityRef<LOCAL> _LOCAL;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -580,7 +811,7 @@ namespace Datos
     partial void OnIdLocalChanged();
     partial void OnFechaSalidaChanging(System.DateTime value);
     partial void OnFechaSalidaChanged();
-    partial void OnTransportistaChanging(string value);
+    partial void OnTransportistaChanging(int value);
     partial void OnTransportistaChanged();
     partial void OnTotalChanging(System.Nullable<decimal> value);
     partial void OnTotalChanged();
@@ -591,12 +822,12 @@ namespace Datos
 		public GUIA()
 		{
 			this._GUIA_DETALLE = new EntitySet<GUIA_DETALLE>(new Action<GUIA_DETALLE>(this.attach_GUIA_DETALLE), new Action<GUIA_DETALLE>(this.detach_GUIA_DETALLE));
-			this._LOCAL = default(EntityRef<LOCAL>);
 			this._TRANSPORTISTA1 = default(EntityRef<TRANSPORTISTA>);
+			this._LOCAL = default(EntityRef<LOCAL>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdGuia", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdGuia", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int IdGuia
 		{
 			get
@@ -660,8 +891,8 @@ namespace Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Transportista", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string Transportista
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Transportista", DbType="Int NOT NULL")]
+		public int Transportista
 		{
 			get
 			{
@@ -737,6 +968,40 @@ namespace Datos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TRANSPORTISTA_GUIA", Storage="_TRANSPORTISTA1", ThisKey="Transportista", OtherKey="IdTransportista", IsForeignKey=true)]
+		public TRANSPORTISTA TRANSPORTISTA1
+		{
+			get
+			{
+				return this._TRANSPORTISTA1.Entity;
+			}
+			set
+			{
+				TRANSPORTISTA previousValue = this._TRANSPORTISTA1.Entity;
+				if (((previousValue != value) 
+							|| (this._TRANSPORTISTA1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TRANSPORTISTA1.Entity = null;
+						previousValue.GUIA.Remove(this);
+					}
+					this._TRANSPORTISTA1.Entity = value;
+					if ((value != null))
+					{
+						value.GUIA.Add(this);
+						this._Transportista = value.IdTransportista;
+					}
+					else
+					{
+						this._Transportista = default(int);
+					}
+					this.SendPropertyChanged("TRANSPORTISTA1");
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOCAL_GUIA", Storage="_LOCAL", ThisKey="IdLocal", OtherKey="IdLocal", IsForeignKey=true)]
 		public LOCAL LOCAL
 		{
@@ -767,40 +1032,6 @@ namespace Datos
 						this._IdLocal = default(int);
 					}
 					this.SendPropertyChanged("LOCAL");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TRANSPORTISTA_GUIA", Storage="_TRANSPORTISTA1", ThisKey="Transportista", OtherKey="IdTransportista", IsForeignKey=true)]
-		public TRANSPORTISTA TRANSPORTISTA1
-		{
-			get
-			{
-				return this._TRANSPORTISTA1.Entity;
-			}
-			set
-			{
-				TRANSPORTISTA previousValue = this._TRANSPORTISTA1.Entity;
-				if (((previousValue != value) 
-							|| (this._TRANSPORTISTA1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TRANSPORTISTA1.Entity = null;
-						previousValue.GUIA.Remove(this);
-					}
-					this._TRANSPORTISTA1.Entity = value;
-					if ((value != null))
-					{
-						value.GUIA.Add(this);
-						this._Transportista = value.IdTransportista;
-					}
-					else
-					{
-						this._Transportista = default(string);
-					}
-					this.SendPropertyChanged("TRANSPORTISTA1");
 				}
 			}
 		}
@@ -1272,7 +1503,7 @@ namespace Datos
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdOrden", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdOrden", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int IdOrden
 		{
 			get
@@ -1656,13 +1887,13 @@ namespace Datos
 		
 		private string _UnidadMedida;
 		
-		private System.Nullable<decimal> _PrecioProveedor;
+		private decimal _PrecioProveedor;
 		
-		private System.Nullable<short> _StockActual;
+		private short _StockActual;
 		
-		private System.Nullable<short> _StockMinimo;
+		private short _StockMinimo;
 		
-		private System.Nullable<decimal> _PrecioVenta;
+		private decimal _PrecioVenta;
 		
 		private EntitySet<GUIA_DETALLE> _GUIA_DETALLE;
 		
@@ -1682,13 +1913,13 @@ namespace Datos
     partial void OnNombreChanged();
     partial void OnUnidadMedidaChanging(string value);
     partial void OnUnidadMedidaChanged();
-    partial void OnPrecioProveedorChanging(System.Nullable<decimal> value);
+    partial void OnPrecioProveedorChanging(decimal value);
     partial void OnPrecioProveedorChanged();
-    partial void OnStockActualChanging(System.Nullable<short> value);
+    partial void OnStockActualChanging(short value);
     partial void OnStockActualChanged();
-    partial void OnStockMinimoChanging(System.Nullable<short> value);
+    partial void OnStockMinimoChanging(short value);
     partial void OnStockMinimoChanged();
-    partial void OnPrecioVentaChanging(System.Nullable<decimal> value);
+    partial void OnPrecioVentaChanging(decimal value);
     partial void OnPrecioVentaChanged();
     #endregion
 		
@@ -1700,7 +1931,7 @@ namespace Datos
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdProducto", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdProducto", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int IdProducto
 		{
 			get
@@ -1764,7 +1995,7 @@ namespace Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnidadMedida", DbType="VarChar(30)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnidadMedida", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
 		public string UnidadMedida
 		{
 			get
@@ -1784,8 +2015,8 @@ namespace Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioProveedor", DbType="Money")]
-		public System.Nullable<decimal> PrecioProveedor
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioProveedor", DbType="Money NOT NULL")]
+		public decimal PrecioProveedor
 		{
 			get
 			{
@@ -1804,8 +2035,8 @@ namespace Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockActual", DbType="SmallInt")]
-		public System.Nullable<short> StockActual
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockActual", DbType="SmallInt NOT NULL")]
+		public short StockActual
 		{
 			get
 			{
@@ -1824,8 +2055,8 @@ namespace Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockMinimo", DbType="SmallInt")]
-		public System.Nullable<short> StockMinimo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockMinimo", DbType="SmallInt NOT NULL")]
+		public short StockMinimo
 		{
 			get
 			{
@@ -1844,8 +2075,8 @@ namespace Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioVenta", DbType="Money")]
-		public System.Nullable<decimal> PrecioVenta
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioVenta", DbType="Money NOT NULL")]
+		public decimal PrecioVenta
 		{
 			get
 			{
@@ -2259,216 +2490,6 @@ namespace Datos
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TRANSPORTISTA")]
-	public partial class TRANSPORTISTA : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _IdTransportista;
-		
-		private string _CedTransportista;
-		
-		private string _Nombre;
-		
-		private string _Direccion;
-		
-		private string _Ciudad;
-		
-		private string _Telefono;
-		
-		private EntitySet<GUIA> _GUIA;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdTransportistaChanging(string value);
-    partial void OnIdTransportistaChanged();
-    partial void OnCedTransportistaChanging(string value);
-    partial void OnCedTransportistaChanged();
-    partial void OnNombreChanging(string value);
-    partial void OnNombreChanged();
-    partial void OnDireccionChanging(string value);
-    partial void OnDireccionChanged();
-    partial void OnCiudadChanging(string value);
-    partial void OnCiudadChanged();
-    partial void OnTelefonoChanging(string value);
-    partial void OnTelefonoChanged();
-    #endregion
-		
-		public TRANSPORTISTA()
-		{
-			this._GUIA = new EntitySet<GUIA>(new Action<GUIA>(this.attach_GUIA), new Action<GUIA>(this.detach_GUIA));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdTransportista", DbType="VarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string IdTransportista
-		{
-			get
-			{
-				return this._IdTransportista;
-			}
-			set
-			{
-				if ((this._IdTransportista != value))
-				{
-					this.OnIdTransportistaChanging(value);
-					this.SendPropertyChanging();
-					this._IdTransportista = value;
-					this.SendPropertyChanged("IdTransportista");
-					this.OnIdTransportistaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CedTransportista", DbType="VarChar(10)")]
-		public string CedTransportista
-		{
-			get
-			{
-				return this._CedTransportista;
-			}
-			set
-			{
-				if ((this._CedTransportista != value))
-				{
-					this.OnCedTransportistaChanging(value);
-					this.SendPropertyChanging();
-					this._CedTransportista = value;
-					this.SendPropertyChanged("CedTransportista");
-					this.OnCedTransportistaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(40)")]
-		public string Nombre
-		{
-			get
-			{
-				return this._Nombre;
-			}
-			set
-			{
-				if ((this._Nombre != value))
-				{
-					this.OnNombreChanging(value);
-					this.SendPropertyChanging();
-					this._Nombre = value;
-					this.SendPropertyChanged("Nombre");
-					this.OnNombreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Direccion", DbType="VarChar(60)")]
-		public string Direccion
-		{
-			get
-			{
-				return this._Direccion;
-			}
-			set
-			{
-				if ((this._Direccion != value))
-				{
-					this.OnDireccionChanging(value);
-					this.SendPropertyChanging();
-					this._Direccion = value;
-					this.SendPropertyChanged("Direccion");
-					this.OnDireccionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ciudad", DbType="VarChar(15)")]
-		public string Ciudad
-		{
-			get
-			{
-				return this._Ciudad;
-			}
-			set
-			{
-				if ((this._Ciudad != value))
-				{
-					this.OnCiudadChanging(value);
-					this.SendPropertyChanging();
-					this._Ciudad = value;
-					this.SendPropertyChanged("Ciudad");
-					this.OnCiudadChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefono", DbType="VarChar(15)")]
-		public string Telefono
-		{
-			get
-			{
-				return this._Telefono;
-			}
-			set
-			{
-				if ((this._Telefono != value))
-				{
-					this.OnTelefonoChanging(value);
-					this.SendPropertyChanging();
-					this._Telefono = value;
-					this.SendPropertyChanged("Telefono");
-					this.OnTelefonoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TRANSPORTISTA_GUIA", Storage="_GUIA", ThisKey="IdTransportista", OtherKey="Transportista")]
-		public EntitySet<GUIA> GUIA
-		{
-			get
-			{
-				return this._GUIA;
-			}
-			set
-			{
-				this._GUIA.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_GUIA(GUIA entity)
-		{
-			this.SendPropertyChanging();
-			entity.TRANSPORTISTA1 = this;
-		}
-		
-		private void detach_GUIA(GUIA entity)
-		{
-			this.SendPropertyChanging();
-			entity.TRANSPORTISTA1 = null;
 		}
 	}
 	
@@ -2998,122 +3019,6 @@ namespace Datos
 		}
 	}
 	
-	public partial class SP_ListarGuia_FiltroResult
-	{
-		
-		private int _IdGuia;
-		
-		private int _IdLocal;
-		
-		private System.DateTime _FechaSalida;
-		
-		private string _Transportista;
-		
-		private System.Nullable<decimal> _Total;
-		
-		private System.Nullable<int> _cantidad_Item;
-		
-		public SP_ListarGuia_FiltroResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdGuia", DbType="Int NOT NULL")]
-		public int IdGuia
-		{
-			get
-			{
-				return this._IdGuia;
-			}
-			set
-			{
-				if ((this._IdGuia != value))
-				{
-					this._IdGuia = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdLocal", DbType="Int NOT NULL")]
-		public int IdLocal
-		{
-			get
-			{
-				return this._IdLocal;
-			}
-			set
-			{
-				if ((this._IdLocal != value))
-				{
-					this._IdLocal = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaSalida", DbType="DateTime NOT NULL")]
-		public System.DateTime FechaSalida
-		{
-			get
-			{
-				return this._FechaSalida;
-			}
-			set
-			{
-				if ((this._FechaSalida != value))
-				{
-					this._FechaSalida = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Transportista", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string Transportista
-		{
-			get
-			{
-				return this._Transportista;
-			}
-			set
-			{
-				if ((this._Transportista != value))
-				{
-					this._Transportista = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Money")]
-		public System.Nullable<decimal> Total
-		{
-			get
-			{
-				return this._Total;
-			}
-			set
-			{
-				if ((this._Total != value))
-				{
-					this._Total = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantidad_Item", DbType="Int")]
-		public System.Nullable<int> cantidad_Item
-		{
-			get
-			{
-				return this._cantidad_Item;
-			}
-			set
-			{
-				if ((this._cantidad_Item != value))
-				{
-					this._cantidad_Item = value;
-				}
-			}
-		}
-	}
-	
 	public partial class SP_ListarOrden_FiltroResult
 	{
 		
@@ -3171,122 +3076,6 @@ namespace Datos
 				if ((this._FechaEntrada != value))
 				{
 					this._FechaEntrada = value;
-				}
-			}
-		}
-	}
-	
-	public partial class SP_ListarTransportista_FiltroResult
-	{
-		
-		private string _IdTransportista;
-		
-		private string _CedTransportista;
-		
-		private string _Nombre;
-		
-		private string _Direccion;
-		
-		private string _Ciudad;
-		
-		private string _Telefono;
-		
-		public SP_ListarTransportista_FiltroResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdTransportista", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string IdTransportista
-		{
-			get
-			{
-				return this._IdTransportista;
-			}
-			set
-			{
-				if ((this._IdTransportista != value))
-				{
-					this._IdTransportista = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CedTransportista", DbType="VarChar(10)")]
-		public string CedTransportista
-		{
-			get
-			{
-				return this._CedTransportista;
-			}
-			set
-			{
-				if ((this._CedTransportista != value))
-				{
-					this._CedTransportista = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(40)")]
-		public string Nombre
-		{
-			get
-			{
-				return this._Nombre;
-			}
-			set
-			{
-				if ((this._Nombre != value))
-				{
-					this._Nombre = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Direccion", DbType="VarChar(60)")]
-		public string Direccion
-		{
-			get
-			{
-				return this._Direccion;
-			}
-			set
-			{
-				if ((this._Direccion != value))
-				{
-					this._Direccion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ciudad", DbType="VarChar(15)")]
-		public string Ciudad
-		{
-			get
-			{
-				return this._Ciudad;
-			}
-			set
-			{
-				if ((this._Ciudad != value))
-				{
-					this._Ciudad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefono", DbType="VarChar(15)")]
-		public string Telefono
-		{
-			get
-			{
-				return this._Telefono;
-			}
-			set
-			{
-				if ((this._Telefono != value))
-				{
-					this._Telefono = value;
 				}
 			}
 		}
@@ -3635,6 +3424,434 @@ namespace Datos
 				if ((this._PrecioVenta != value))
 				{
 					this._PrecioVenta = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_ListarTransportista_FiltroResult
+	{
+		
+		private int _IdTransportista;
+		
+		private string _CedTransportista;
+		
+		private string _Nombre;
+		
+		private string _Direccion;
+		
+		private string _Ciudad;
+		
+		private string _Telefono;
+		
+		public SP_ListarTransportista_FiltroResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdTransportista", DbType="Int NOT NULL")]
+		public int IdTransportista
+		{
+			get
+			{
+				return this._IdTransportista;
+			}
+			set
+			{
+				if ((this._IdTransportista != value))
+				{
+					this._IdTransportista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CedTransportista", DbType="VarChar(10)")]
+		public string CedTransportista
+		{
+			get
+			{
+				return this._CedTransportista;
+			}
+			set
+			{
+				if ((this._CedTransportista != value))
+				{
+					this._CedTransportista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(40)")]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Direccion", DbType="VarChar(60)")]
+		public string Direccion
+		{
+			get
+			{
+				return this._Direccion;
+			}
+			set
+			{
+				if ((this._Direccion != value))
+				{
+					this._Direccion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ciudad", DbType="VarChar(15)")]
+		public string Ciudad
+		{
+			get
+			{
+				return this._Ciudad;
+			}
+			set
+			{
+				if ((this._Ciudad != value))
+				{
+					this._Ciudad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefono", DbType="VarChar(15)")]
+		public string Telefono
+		{
+			get
+			{
+				return this._Telefono;
+			}
+			set
+			{
+				if ((this._Telefono != value))
+				{
+					this._Telefono = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_ListarGuia_FiltroResult
+	{
+		
+		private int _IdGuia;
+		
+		private int _IdLocal;
+		
+		private System.DateTime _FechaSalida;
+		
+		private int _Transportista;
+		
+		private System.Nullable<decimal> _Total;
+		
+		private System.Nullable<int> _cantidad_Item;
+		
+		public SP_ListarGuia_FiltroResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdGuia", DbType="Int NOT NULL")]
+		public int IdGuia
+		{
+			get
+			{
+				return this._IdGuia;
+			}
+			set
+			{
+				if ((this._IdGuia != value))
+				{
+					this._IdGuia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdLocal", DbType="Int NOT NULL")]
+		public int IdLocal
+		{
+			get
+			{
+				return this._IdLocal;
+			}
+			set
+			{
+				if ((this._IdLocal != value))
+				{
+					this._IdLocal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaSalida", DbType="DateTime NOT NULL")]
+		public System.DateTime FechaSalida
+		{
+			get
+			{
+				return this._FechaSalida;
+			}
+			set
+			{
+				if ((this._FechaSalida != value))
+				{
+					this._FechaSalida = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Transportista", DbType="Int NOT NULL")]
+		public int Transportista
+		{
+			get
+			{
+				return this._Transportista;
+			}
+			set
+			{
+				if ((this._Transportista != value))
+				{
+					this._Transportista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Money")]
+		public System.Nullable<decimal> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantidad_Item", DbType="Int")]
+		public System.Nullable<int> cantidad_Item
+		{
+			get
+			{
+				return this._cantidad_Item;
+			}
+			set
+			{
+				if ((this._cantidad_Item != value))
+				{
+					this._cantidad_Item = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_GetGuiaResult
+	{
+		
+		private int _IdGuia;
+		
+		private int _IdLocal;
+		
+		private System.DateTime _FechaSalida;
+		
+		private int _Transportista;
+		
+		private System.Nullable<decimal> _Total;
+		
+		private System.Nullable<int> _cantidad_Item;
+		
+		public SP_GetGuiaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdGuia", DbType="Int NOT NULL")]
+		public int IdGuia
+		{
+			get
+			{
+				return this._IdGuia;
+			}
+			set
+			{
+				if ((this._IdGuia != value))
+				{
+					this._IdGuia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdLocal", DbType="Int NOT NULL")]
+		public int IdLocal
+		{
+			get
+			{
+				return this._IdLocal;
+			}
+			set
+			{
+				if ((this._IdLocal != value))
+				{
+					this._IdLocal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaSalida", DbType="DateTime NOT NULL")]
+		public System.DateTime FechaSalida
+		{
+			get
+			{
+				return this._FechaSalida;
+			}
+			set
+			{
+				if ((this._FechaSalida != value))
+				{
+					this._FechaSalida = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Transportista", DbType="Int NOT NULL")]
+		public int Transportista
+		{
+			get
+			{
+				return this._Transportista;
+			}
+			set
+			{
+				if ((this._Transportista != value))
+				{
+					this._Transportista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Money")]
+		public System.Nullable<decimal> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantidad_Item", DbType="Int")]
+		public System.Nullable<int> cantidad_Item
+		{
+			get
+			{
+				return this._cantidad_Item;
+			}
+			set
+			{
+				if ((this._cantidad_Item != value))
+				{
+					this._cantidad_Item = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_ListarGuiaDetalleResult
+	{
+		
+		private int _IdGuia;
+		
+		private int _IdProducto;
+		
+		private short _Cantidad;
+		
+		private System.Nullable<decimal> _Subtotal;
+		
+		public SP_ListarGuiaDetalleResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdGuia", DbType="Int NOT NULL")]
+		public int IdGuia
+		{
+			get
+			{
+				return this._IdGuia;
+			}
+			set
+			{
+				if ((this._IdGuia != value))
+				{
+					this._IdGuia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdProducto", DbType="Int NOT NULL")]
+		public int IdProducto
+		{
+			get
+			{
+				return this._IdProducto;
+			}
+			set
+			{
+				if ((this._IdProducto != value))
+				{
+					this._IdProducto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="SmallInt NOT NULL")]
+		public short Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subtotal", DbType="Money")]
+		public System.Nullable<decimal> Subtotal
+		{
+			get
+			{
+				return this._Subtotal;
+			}
+			set
+			{
+				if ((this._Subtotal != value))
+				{
+					this._Subtotal = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@ namespace Presentación.Faturacion
 
         private void verDatos()
         {
-            txtId.Text = aoc.IdTransportista;
+            txtId.Text = aoc.IdTransportista.ToString();
             txtCedula.Text = aoc.CedTransportista;
             txtNombre.Text = aoc.Nombre;
             txtCiudad.Text = aoc.Ciudad;
@@ -41,7 +41,7 @@ namespace Presentación.Faturacion
         public Transportista crearObjeto()
         {
             Transportista oc = new Transportista(
-                txtId.Text,
+                int.Parse(txtId.Text),
                 txtCedula.Text,
                 txtNombre.Text,
                 txtDireccion.Text,

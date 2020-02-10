@@ -59,6 +59,12 @@
     <Compile Include="Faturacion\frmAdminOrden.Designer.cs">
       <DependentUpon>frmAdminOrden.cs</DependentUpon>
     </Compile>
+    <Compile Include="Faturacion\frmSeleccionarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Faturacion\frmSeleccionarProducto.Designer.cs">
+      <DependentUpon>frmSeleccionarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Faturacion\frmAdminTransportista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     <EmbeddedResource Include="Faturacion\frmAdminOrden.resx">
       <DependentUpon>frmAdminOrden.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Faturacion\frmSeleccionarProducto.resx">
+      <DependentUpon>frmSeleccionarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Faturacion\frmAdminTransportista.resx">
       <DependentUpon>frmAdminTransportista.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +204,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\DataSources\Entidades.ClasePersonalizada.ProductoCategoria.datasource" />
+    <None Include="Properties\DataSources\Entidades.Facturacion.GuiaDetalle.datasource" />
+    <None Include="Properties\DataSources\Entidades.Inventario.Producto.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

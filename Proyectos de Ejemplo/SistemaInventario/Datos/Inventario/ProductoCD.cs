@@ -114,7 +114,7 @@ namespace Datos.Inventario
                 using (DB = new BDMarketDataContext())
                 {
                     DB.SP_ActualizarProducto(
-                        oc.IdProducto, 
+                        oc.IdProducto,
                         oc.IdCategoria,
                         oc.Nombre,
                         oc.UnidadMedida,
