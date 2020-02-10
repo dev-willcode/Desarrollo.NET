@@ -64,10 +64,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Seguridad\UsuarioCD.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Seguridad\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="BDMarket.dbml">

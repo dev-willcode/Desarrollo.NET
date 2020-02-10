@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminTransportista));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminGuia));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -48,12 +48,13 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(58, 45);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(56, 39);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(542, 295);
+            this.dataGridView1.Size = new System.Drawing.Size(544, 302);
             this.dataGridView1.TabIndex = 30;
             // 
             // toolStrip1
@@ -153,7 +154,7 @@
             this.eliminarStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.eliminarStripButton3.Click += new System.EventHandler(this.eliminarStripButton3_Click);
             // 
-            // frmAdminTransportista
+            // frmAdminGuia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -162,8 +163,8 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tlsBarraAdmin);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "frmAdminTransportista";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "frmAdminGuia";
             this.Text = "frmAdminLocal";
             this.Load += new System.EventHandler(this.frmAdminGuia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

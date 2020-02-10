@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Presentación.Seguridad;
 
 namespace Presentación
 {
@@ -13,7 +14,7 @@ namespace Presentación
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrincipal());
+            Application.Run(new Login());
         }
     }
 }

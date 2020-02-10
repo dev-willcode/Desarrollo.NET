@@ -434,6 +434,13 @@ namespace Datos
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idGuia);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_IniciarSesion")]
+		public ISingleResult<SP_IniciarSesionResult> SP_IniciarSesion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(30)")] string user, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pwd)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), user, pwd);
+			return ((ISingleResult<SP_IniciarSesionResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TRANSPORTISTA")]
@@ -3859,6 +3866,104 @@ namespace Datos
 				if ((this._Subtotal != value))
 				{
 					this._Subtotal = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_IniciarSesionResult
+	{
+		
+		private int _IdeUsuario;
+		
+		private string _EstadoUsuario;
+		
+		private System.Nullable<int> _IdePerfil;
+		
+		private string _NombreUsuario;
+		
+		private string _Clave;
+		
+		public SP_IniciarSesionResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdeUsuario", DbType="Int NOT NULL")]
+		public int IdeUsuario
+		{
+			get
+			{
+				return this._IdeUsuario;
+			}
+			set
+			{
+				if ((this._IdeUsuario != value))
+				{
+					this._IdeUsuario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoUsuario", DbType="NVarChar(10)")]
+		public string EstadoUsuario
+		{
+			get
+			{
+				return this._EstadoUsuario;
+			}
+			set
+			{
+				if ((this._EstadoUsuario != value))
+				{
+					this._EstadoUsuario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdePerfil", DbType="Int")]
+		public System.Nullable<int> IdePerfil
+		{
+			get
+			{
+				return this._IdePerfil;
+			}
+			set
+			{
+				if ((this._IdePerfil != value))
+				{
+					this._IdePerfil = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreUsuario", DbType="NVarChar(30)")]
+		public string NombreUsuario
+		{
+			get
+			{
+				return this._NombreUsuario;
+			}
+			set
+			{
+				if ((this._NombreUsuario != value))
+				{
+					this._NombreUsuario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Clave", DbType="NVarChar(MAX)")]
+		public string Clave
+		{
+			get
+			{
+				return this._Clave;
+			}
+			set
+			{
+				if ((this._Clave != value))
+				{
+					this._Clave = value;
 				}
 			}
 		}

@@ -415,4 +415,15 @@
     <Parameter Name="idGuia" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.SP_IniciarSesion" Method="SP_IniciarSesion">
+    <Parameter Name="user" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="pwd" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="SP_IniciarSesionResult">
+      <Column Name="IdeUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoUsuario" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="IdePerfil" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NombreUsuario" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Clave" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>
