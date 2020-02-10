@@ -411,4 +411,8 @@
       <Column Name="Subtotal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.SP_BorrarDetalles" Method="SP_BorrarDetalles">
+    <Parameter Name="idGuia" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

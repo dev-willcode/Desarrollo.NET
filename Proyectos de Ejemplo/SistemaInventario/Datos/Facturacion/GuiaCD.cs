@@ -148,6 +148,27 @@ namespace Datos.Facturacion
             }
         }
 
+        public static void EliminarGuiaDetalle(int idGuia)
+        {
+            BDMarketDataContext DB = null;
+            try
+            {
+                using (DB = new BDMarketDataContext())
+                {
+                    DB.SP_BorrarDetalles(idGuia);
+                    DB.SubmitChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new DatosExcepciones("Error al eliminar Guia.", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
+
         public static void ActualizarGuia(Guia oc)
         {
             BDMarketDataContext DB = null;

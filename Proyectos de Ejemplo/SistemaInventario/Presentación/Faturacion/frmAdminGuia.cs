@@ -71,6 +71,7 @@ namespace Presentación.Faturacion
                         Guia oc = dataGridView1.CurrentRow.DataBoundItem as Guia;
                         if (oC.DeleteGuia(oc))
                         {
+                            oC.BorrarGuiaDetalle(oc.IdGuia); 
                             toolStripLabel1.Text = "Se ha eliminado el Guia seleccionado...";
                         }
                         else
@@ -101,7 +102,11 @@ namespace Presentación.Faturacion
                     if (fec.DialogResult == DialogResult.OK)
                     {
                         Guia oc = fec.crearObjeto();
-                        oC.UpdateGuia(oc);
+                        if (oC.UpdateGuia(oc))
+                        {
+                            oC.BorrarGuiaDetalle(oc.IdGuia);
+                            oC.InsertarGuiaDetalle(fec.obtenerListadoDetalle(oc.IdGuia));
+                        }
                         fec.Close();
                         toolStripLabel1.Text = "Se ha actualizado el Guia...";
                     }

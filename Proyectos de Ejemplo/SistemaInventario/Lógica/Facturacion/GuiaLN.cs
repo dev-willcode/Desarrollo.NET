@@ -122,6 +122,19 @@ namespace Lógica.Facturacion
                 throw new LogicaExcepciones("Error al crear Guia.", ex);
             }
         }
+
+        public void BorrarGuiaDetalle(int idGuia)
+        {
+            try
+            {
+                GuiaCD.EliminarGuiaDetalle(idGuia);
+            }
+            catch (Exception ex)
+            {
+                throw new LogicaExcepciones("Error al Actualizar GuiaDetalle.", ex);
+            }
+        }
+
         public bool UpdateGuia(Guia oc)
         {
             try
