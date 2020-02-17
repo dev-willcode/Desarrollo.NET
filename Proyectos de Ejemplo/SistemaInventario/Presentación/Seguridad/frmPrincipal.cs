@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Presentación.Faturacion;
 using Presentación.Inventario;
+using Presentación.Reportes;
 
 namespace Presentación
 {
@@ -91,6 +92,18 @@ namespace Presentación
             if (Application.OpenForms["frmAdminOrden"] == null)
             {
                 frmAdminOrden f = new frmAdminOrden
+                {
+                    MdiParent = this
+                };
+                f.Show();
+            }
+        }
+
+        private void reporteCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["ReporteCategoria"] == null)
+            {
+                ReporteCategoria f = new ReporteCategoria
                 {
                     MdiParent = this
                 };

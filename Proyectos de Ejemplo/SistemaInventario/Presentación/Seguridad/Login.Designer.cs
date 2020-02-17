@@ -61,7 +61,7 @@
             this.btnLogin.Location = new System.Drawing.Point(20, 159);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(192, 47);
-            this.btnLogin.TabIndex = 2;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Ingresar";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -72,7 +72,7 @@
             this.btnSalir.Location = new System.Drawing.Point(218, 159);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(192, 47);
-            this.btnSalir.TabIndex = 3;
+            this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Cancelar";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -93,7 +93,7 @@
             this.txtContrasenia.Location = new System.Drawing.Point(160, 113);
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Size = new System.Drawing.Size(227, 24);
-            this.txtContrasenia.TabIndex = 5;
+            this.txtContrasenia.TabIndex = 2;
             // 
             // label3
             // 
