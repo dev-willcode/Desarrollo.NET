@@ -212,6 +212,9 @@
     <EmbeddedResource Include="Seguridad\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Ayuda\ayuda.chm" />
+    <None Include="Ayuda\ayuda.hhp" />
+    <None Include="Ayuda\html\Table of Contents.hhc" />
     <None Include="Properties\DataSources\Entidades.ClasePersonalizada.ProductoCategoria.datasource" />
     <None Include="Properties\DataSources\Entidades.Facturacion.GuiaDetalle.datasource" />
     <None Include="Properties\DataSources\Entidades.Inventario.Producto.datasource" />
@@ -242,6 +245,9 @@
       <Name>Logica</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Ayuda\html\helper.html" />
+    <Content Include="Ayuda\html\stylesheets.css" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

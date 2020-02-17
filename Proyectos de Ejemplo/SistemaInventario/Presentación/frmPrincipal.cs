@@ -97,5 +97,10 @@ namespace Presentación
                 f.Show();
             }
         }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, ".../Presentación/Ayuda/ayuda.chm");
+        }
     }
 }
