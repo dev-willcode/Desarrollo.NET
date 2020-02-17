@@ -243,6 +243,9 @@
     <EmbeddedResource Include="Seguridad\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Ayuda\ayuda.chm" />
+    <None Include="Ayuda\ayuda.hhp" />
+    <None Include="Ayuda\html\Table of Contents.hhc" />
     <None Include="Properties\DataSources\Entidades.ClasePersonalizada.ProductoCategoria.datasource" />
     <None Include="Properties\DataSources\Entidades.Facturacion.GuiaDetalle.datasource" />
     <None Include="Properties\DataSources\Entidades.Inventario.Producto.datasource" />
@@ -285,7 +288,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+    <Content Include="Ayuda\html\helper.html" />
+    <Content Include="Ayuda\html\stylesheets.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
