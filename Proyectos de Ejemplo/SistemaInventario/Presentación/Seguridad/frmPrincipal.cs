@@ -109,10 +109,36 @@ namespace Presentación
                 };
                 f.Show();
             }
+        }
 
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, ".../Presentación/Ayuda/ayuda.chm");
+            Help.ShowHelp(this, "file://C:\\Users\\LAB02-MAQ06\\Documents\\Development\\Desarrollo.NET\\Proyectos de Ejemplo\\SistemaInventario\\Presentación\\Ayuda\\ayuda.chm");
+        }
+
+        private void reporteCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmReporteCategoria"] == null)
+            {
+                frmReporteCategoria f = new frmReporteCategoria
+                {
+                    MdiParent = this
+                };
+                f.Show();
+            }
+
+        }
+
+        private void reporteProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmReporteProductoProveedor"] == null)
+            {
+                frmReporteProductoProveedor f = new frmReporteProductoProveedor
+                {
+                    MdiParent = this
+                };
+                f.Show();
+            }
         }
     }
 }

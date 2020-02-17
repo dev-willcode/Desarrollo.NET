@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClasePersonalizada\ProductoCategoriaLN.cs" />
+    <Compile Include="ClasePersonalizada\ReporteCategoriaLN.cs" />
     <Compile Include="Facturacion\OrdenLN.cs" />
     <Compile Include="Facturacion\GuiaLN.cs" />
     <Compile Include="Facturacion\TransportistaLN.cs" />

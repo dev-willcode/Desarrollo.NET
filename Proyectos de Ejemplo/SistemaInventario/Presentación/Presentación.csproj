@@ -39,6 +39,15 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Compression.Base, Version=17.4460.0.49, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Compression.Base.17.4.0.49\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=17.4460.0.49, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.17.4.0.49\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Base, Version=17.4460.0.49, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Pdf.WinForms.17.4.0.49\lib\net46\Syncfusion.Pdf.Base.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -107,6 +116,45 @@
     </Compile>
     <Compile Include="Faturacion\frmEditLocal.Designer.cs">
       <DependentUpon>frmEditLocal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\frmReporteCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frmReporteCategoria.Designer.cs">
+      <DependentUpon>frmReporteCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\frmReporteProductoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frmReporteProductoProveedor.Designer.cs">
+      <DependentUpon>frmReporteProductoProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarketECUADORDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarketECUADORDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\CRReporteCategoria.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRReporteCategoria.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\CRReporteProductoProveedor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRReporteProductoProveedor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\DataSetReporteCategoria.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReporteCategoria.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DataSetReporteProductoProveedor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReporteProductoProveedor.xsd</DependentUpon>
     </Compile>
     <Compile Include="Seguridad\frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -202,6 +250,20 @@
     <EmbeddedResource Include="Faturacion\frmEditLocal.resx">
       <DependentUpon>frmEditLocal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frmReporteCategoria.resx">
+      <DependentUpon>frmReporteCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frmReporteProductoProveedor.resx">
+      <DependentUpon>frmReporteProductoProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\CRReporteCategoria.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRReporteCategoria.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\CRReporteProductoProveedor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRReporteProductoProveedor.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +308,18 @@
     <None Include="Ayuda\ayuda.chm" />
     <None Include="Ayuda\ayuda.hhp" />
     <None Include="Ayuda\html\Table of Contents.hhc" />
+    <None Include="MarketECUADORDataSet.xsc">
+      <DependentUpon>MarketECUADORDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MarketECUADORDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MarketECUADORDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MarketECUADORDataSet.xss">
+      <DependentUpon>MarketECUADORDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\Entidades.ClasePersonalizada.ProductoCategoria.datasource" />
     <None Include="Properties\DataSources\Entidades.Facturacion.GuiaDetalle.datasource" />
     <None Include="Properties\DataSources\Entidades.Inventario.Producto.datasource" />
@@ -258,6 +332,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reportes\DataSetReporteCategoria.xsc">
+      <DependentUpon>DataSetReporteCategoria.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSetReporteCategoria.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReporteCategoria.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSetReporteCategoria.xss">
+      <DependentUpon>DataSetReporteCategoria.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSetReporteProductoProveedor.xsc">
+      <DependentUpon>DataSetReporteProductoProveedor.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSetReporteProductoProveedor.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReporteProductoProveedor.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSetReporteProductoProveedor.xss">
+      <DependentUpon>DataSetReporteProductoProveedor.xsd</DependentUpon>
+    </None>
     <None Include="Reportes\DataSetReportes.xsc">
       <DependentUpon>DataSetReportes.xsd</DependentUpon>
     </None>
@@ -290,6 +386,9 @@
   <ItemGroup>
     <Content Include="Ayuda\html\helper.html" />
     <Content Include="Ayuda\html\stylesheets.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

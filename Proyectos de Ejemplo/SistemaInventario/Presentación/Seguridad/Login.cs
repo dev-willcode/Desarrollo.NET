@@ -56,14 +56,14 @@ namespace Presentación.Seguridad
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, "file://F:\\Desarrollo Escritorio\\.NET\\Desarrollo.NET\\Proyectos de Ejemplo\\SistemaInventario\\Presentación\\Ayuda\\ayuda.chm");
+            Help.ShowHelp(this, "file://C:\\Users\\LAB02-MAQ06\\Documents\\Development\\Desarrollo.NET\\Proyectos de Ejemplo\\SistemaInventario\\Presentación\\Ayuda\\ayuda.chm");
         }
 
         private void Login_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar.Equals(Keys.F1))
             {
-                Help.ShowHelp(this, "file://F:\\Desarrollo Escritorio\\.NET\\Desarrollo.NET\\Proyectos de Ejemplo\\SistemaInventario\\Presentación\\Ayuda\\ayuda.chm");
+                Help.ShowHelp(this, "file://C:\\Users\\LAB02-MAQ06\\Documents\\Development\\Desarrollo.NET\\Proyectos de Ejemplo\\SistemaInventario\\Presentación\\Ayuda\\ayuda.chm");
             }
         }
     }

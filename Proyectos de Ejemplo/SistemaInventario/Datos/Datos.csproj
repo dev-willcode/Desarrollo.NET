@@ -49,6 +49,7 @@
       <DependentUpon>BDMarket.dbml</DependentUpon>
     </Compile>
     <Compile Include="ClasePersonalizada\ProductoCategoriaCD.cs" />
+    <Compile Include="ClasePersonalizada\ReporteCategoriaCD.cs" />
     <Compile Include="DatosExcepciones.cs" />
     <Compile Include="Facturacion\OrdenCD.cs" />
     <Compile Include="Facturacion\GuiaCD.cs" />

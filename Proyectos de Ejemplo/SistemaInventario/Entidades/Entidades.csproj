@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClasePersonalizada\ProductoCategoria.cs" />
+    <Compile Include="ClasePersonalizada\ReporteCategoria.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Facturacion\Guia.cs" />
     <Compile Include="Facturacion\GuiaDetalle.cs" />

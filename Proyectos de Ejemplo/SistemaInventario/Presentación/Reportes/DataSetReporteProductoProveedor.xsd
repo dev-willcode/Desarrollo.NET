@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetReporteProductoProveedor" targetNamespace="http://tempuri.org/DataSetReporteProductoProveedor.xsd" xmlns:mstns="http://tempuri.org/DataSetReporteProductoProveedor.xsd" xmlns="http://tempuri.org/DataSetReporteProductoProveedor.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MarketECUADORConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MarketECUADORConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Presentación.Properties.Settings.GlobalReference.Default.MarketECUADORConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Vista_ProductoCategoriaTableAdapter" GeneratorDataComponentClassName="Vista_ProductoCategoriaTableAdapter" Name="Vista_ProductoCategoria" UserDataComponentName="Vista_ProductoCategoriaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MarketECUADORConnectionString (Settings)" DbObjectName="MarketECUADOR.dbo.Vista_ProductoCategoria" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Categoria, Nombre, UnidadMedida, IdProducto, PrecioProveedor, StockActual, StockMinimo, PrecioVenta, Proveedor FROM dbo.Vista_ProductoCategoria</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Categoria" DataSetColumn="Categoria" />
+              <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
+              <Mapping SourceColumn="UnidadMedida" DataSetColumn="UnidadMedida" />
+              <Mapping SourceColumn="IdProducto" DataSetColumn="IdProducto" />
+              <Mapping SourceColumn="PrecioProveedor" DataSetColumn="PrecioProveedor" />
+              <Mapping SourceColumn="StockActual" DataSetColumn="StockActual" />
+              <Mapping SourceColumn="StockMinimo" DataSetColumn="StockMinimo" />
+              <Mapping SourceColumn="PrecioVenta" DataSetColumn="PrecioVenta" />
+              <Mapping SourceColumn="Proveedor" DataSetColumn="Proveedor" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetReporteProductoProveedor" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetReporteProductoProveedor" msprop:Generator_UserDSName="DataSetReporteProductoProveedor">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Vista_ProductoCategoria" msprop:Generator_TableClassName="Vista_ProductoCategoriaDataTable" msprop:Generator_TableVarName="tableVista_ProductoCategoria" msprop:Generator_TablePropName="Vista_ProductoCategoria" msprop:Generator_RowDeletingName="Vista_ProductoCategoriaRowDeleting" msprop:Generator_RowChangingName="Vista_ProductoCategoriaRowChanging" msprop:Generator_RowEvHandlerName="Vista_ProductoCategoriaRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_ProductoCategoriaRowDeleted" msprop:Generator_UserTableName="Vista_ProductoCategoria" msprop:Generator_RowChangedName="Vista_ProductoCategoriaRowChanged" msprop:Generator_RowEvArgName="Vista_ProductoCategoriaRowChangeEvent" msprop:Generator_RowClassName="Vista_ProductoCategoriaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Categoria" msprop:Generator_ColumnVarNameInTable="columnCategoria" msprop:Generator_ColumnPropNameInRow="Categoria" msprop:Generator_ColumnPropNameInTable="CategoriaColumn" msprop:Generator_UserColumnName="Categoria">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UnidadMedida" msprop:Generator_ColumnVarNameInTable="columnUnidadMedida" msprop:Generator_ColumnPropNameInRow="UnidadMedida" msprop:Generator_ColumnPropNameInTable="UnidadMedidaColumn" msprop:Generator_UserColumnName="UnidadMedida">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdProducto" msprop:Generator_ColumnVarNameInTable="columnIdProducto" msprop:Generator_ColumnPropNameInRow="IdProducto" msprop:Generator_ColumnPropNameInTable="IdProductoColumn" msprop:Generator_UserColumnName="IdProducto" type="xs:int" />
+              <xs:element name="PrecioProveedor" msprop:Generator_ColumnVarNameInTable="columnPrecioProveedor" msprop:Generator_ColumnPropNameInRow="PrecioProveedor" msprop:Generator_ColumnPropNameInTable="PrecioProveedorColumn" msprop:Generator_UserColumnName="PrecioProveedor" type="xs:decimal" />
+              <xs:element name="StockActual" msprop:Generator_ColumnVarNameInTable="columnStockActual" msprop:Generator_ColumnPropNameInRow="StockActual" msprop:Generator_ColumnPropNameInTable="StockActualColumn" msprop:Generator_UserColumnName="StockActual" type="xs:short" />
+              <xs:element name="StockMinimo" msprop:Generator_ColumnVarNameInTable="columnStockMinimo" msprop:Generator_ColumnPropNameInRow="StockMinimo" msprop:Generator_ColumnPropNameInTable="StockMinimoColumn" msprop:Generator_UserColumnName="StockMinimo" type="xs:short" />
+              <xs:element name="PrecioVenta" msprop:Generator_ColumnVarNameInTable="columnPrecioVenta" msprop:Generator_ColumnPropNameInRow="PrecioVenta" msprop:Generator_ColumnPropNameInTable="PrecioVentaColumn" msprop:Generator_UserColumnName="PrecioVenta" type="xs:decimal" />
+              <xs:element name="Proveedor" msprop:Generator_ColumnVarNameInTable="columnProveedor" msprop:Generator_ColumnPropNameInRow="Proveedor" msprop:Generator_ColumnPropNameInTable="ProveedorColumn" msprop:Generator_UserColumnName="Proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Vista_ProductoCategoria" />
+      <xs:field xpath="mstns:IdProducto" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

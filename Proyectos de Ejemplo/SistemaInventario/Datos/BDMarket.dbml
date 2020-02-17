@@ -426,4 +426,16 @@
       <Column Name="Clave" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.SP_ReporteCategorias" Method="SP_ReporteCategorias">
+    <Parameter Name="idCategoria" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_ReporteCategoriasResult">
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PrecioProveedor" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="StockActual" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PrecioVenta" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="IdCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>
