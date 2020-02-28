@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Camionesdb">
+  <DataContextMoniker Name="/CamionesdbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e7f2a6bf-1134-4060-bb77-5783d04ab732" absoluteBounds="0.75, 0.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/CamionesdbDataContext/CAMION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5382474c-de7d-4cb2-be5c-0d87b1e4951d" absoluteBounds="0.765, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="81a9c278-332d-423a-98b6-d955fb96dfd1" absoluteBounds="6.25, 1.25, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/CamionesdbDataContext/GUIA_DETALLE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8485ab16-746f-4c5c-9061-a2b2b318437e" absoluteBounds="6.265, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6cc0f243-8605-470e-b870-32d3a54a2ef2" absoluteBounds="0.75, 3.875, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/CamionesdbDataContext/CLIENTE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="adf3132e-a369-4b8d-b717-8ff06373b220" absoluteBounds="0.765, 4.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12875a2b-9ba1-405a-bd81-c55622362106" absoluteBounds="3.5, 0.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/CamionesdbDataContext/GUIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="adc6e74e-ecd9-4f9c-a8cc-bfac084b944c" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 1.84699625651042); (6.25 : 1.84699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CamionesdbDataContext/GUIA/GUIA_GUIA_DETALLE" />
+      <nodes>
+        <classShapeMoniker Id="12875a2b-9ba1-405a-bd81-c55622362106" />
+        <classShapeMoniker Id="81a9c278-332d-423a-98b6-d955fb96dfd1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.76044840494792); (3.5 : 1.76044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CamionesdbDataContext/CAMION/CAMION_GUIA" />
+      <nodes>
+        <classShapeMoniker Id="e7f2a6bf-1134-4060-bb77-5783d04ab732" />
+        <classShapeMoniker Id="12875a2b-9ba1-405a-bd81-c55622362106" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="db5283fd-d511-471c-a2c5-716c98018a08" absoluteBounds="4.25, 3.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/CamionesdbDataContext/ENCOMIENDAS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4819a329-b9a5-46ad-a17f-0e7ee77b2f27" absoluteBounds="4.265, 4.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.25 : 4.95274983723958); (7.28125 : 4.95274983723958); (7.28125 : 2.44399251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CamionesdbDataContext/ENCOMIENDAS/ENCOMIENDAS_GUIA_DETALLE" />
+      <nodes>
+        <classShapeMoniker Id="db5283fd-d511-471c-a2c5-716c98018a08" />
+        <classShapeMoniker Id="81a9c278-332d-423a-98b6-d955fb96dfd1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.76044840494792); (4.25 : 4.76044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CamionesdbDataContext/CLIENTE/CLIENTE_ENCOMIENDAS" />
+      <nodes>
+        <classShapeMoniker Id="6cc0f243-8605-470e-b870-32d3a54a2ef2" />
+        <classShapeMoniker Id="db5283fd-d511-471c-a2c5-716c98018a08" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

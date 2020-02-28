@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="camionesdb" Class="CamionesdbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=camionesdb;Integrated Security=True" SettingsObjectName="Datos.Properties.Settings" SettingsPropertyName="camionesdbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CAMION" Member="CAMION">
+    <Type Name="CAMION">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="peso_max" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="numero_viajes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CAMION_GUIA" Member="GUIA" ThisKey="id" OtherKey="id_camion" Type="GUIA" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GUIA_DETALLE" Member="GUIA_DETALLE">
+    <Type Name="GUIA_DETALLE">
+      <Column Name="id_encomienda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_guia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="GUIA_GUIA_DETALLE" Member="GUIA" ThisKey="id_guia" OtherKey="id" Type="GUIA" IsForeignKey="true" />
+      <Association Name="ENCOMIENDAS_GUIA_DETALLE" Member="ENCOMIENDAS" ThisKey="id_encomienda" OtherKey="id" Type="ENCOMIENDAS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLIENTE" Member="CLIENTE">
+    <Type Name="CLIENTE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cedula" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="nombres" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="telefono" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="direccion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="CLIENTE_ENCOMIENDAS" Member="ENCOMIENDAS" ThisKey="id" OtherKey="id_cliente" Type="ENCOMIENDAS" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GUIA" Member="GUIA">
+    <Type Name="GUIA">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_camion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha_envio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cantidad_encomiendas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="peso_total" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="GUIA_GUIA_DETALLE" Member="GUIA_DETALLE" ThisKey="id" OtherKey="id_guia" Type="GUIA_DETALLE" />
+      <Association Name="CAMION_GUIA" Member="CAMION" ThisKey="id_camion" OtherKey="id" Type="CAMION" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENCOMIENDAS" Member="ENCOMIENDAS">
+    <Type Name="ENCOMIENDAS">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_cliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codigo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="peso" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="direccion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="costo_envio" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ENCOMIENDAS_GUIA_DETALLE" Member="GUIA_DETALLE" ThisKey="id" OtherKey="id_encomienda" Type="GUIA_DETALLE" />
+      <Association Name="CLIENTE_ENCOMIENDAS" Member="CLIENTE" ThisKey="id_cliente" OtherKey="id" Type="CLIENTE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SP_InsertarCamion" Method="SP_InsertarCamion">
+    <Parameter Name="nombre" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="peso_max" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="estado" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="numero_viajes" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ListarGuia" Method="SP_ListarGuia">
+    <ElementType Name="SP_ListarGuiaResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_camion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha_envio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cantidad_encomiendas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="peso_total" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_InsertarCliente" Method="SP_InsertarCliente">
+    <Parameter Name="cedula" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="nombres" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="telefono" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="direccion" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_InsertarGuia" Method="SP_InsertarGuia">
+    <Parameter Name="id_camion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fecha_envio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="cantidad_encomiendas" Type="System.Int32" DbType="Int" />
+    <Parameter Name="peso_total" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_InsertarGuiaDetalle" Method="SP_InsertarGuiaDetalle">
+    <Parameter Name="id_encomienda" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_guia" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ListarCamiones" Method="SP_ListarCamiones">
+    <ElementType Name="SP_ListarCamionesResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="peso_max" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="numero_viajes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ListarClientes" Method="SP_ListarClientes">
+    <ElementType Name="SP_ListarClientesResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cedula" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="nombres" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="telefono" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="direccion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ListarEncomiendas" Method="SP_ListarEncomiendas">
+    <ElementType Name="SP_ListarEncomiendasResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_cliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codigo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="peso" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="direccion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="costo_envio" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_InsertarEncomienda" Method="SP_InsertarEncomienda">
+    <Parameter Name="id_cliente" Type="System.Int32" DbType="Int" />
+    <Parameter Name="codigo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="peso" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="direccion" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="costo_envio" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="estado" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ObtenerGuiaObjeto" Method="SP_ObtenerGuiaObjeto">
+    <Parameter Name="id_camion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fecha_envio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="cantidad_encomiendas" Type="System.Int32" DbType="Int" />
+    <Parameter Name="peso_total" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <ElementType Name="SP_ObtenerGuiaObjetoResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_camion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha_envio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cantidad_encomiendas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="peso_total" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ActualizarEncomiendaEstado" Method="SP_ActualizarEncomiendaEstado">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ActualizarCamionDisponible" Method="SP_ActualizarCamionDisponible">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ActualizarCamionOcupado" Method="SP_ActualizarCamionOcupado">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ListarEncomiendasPorEntregar" Method="SP_ListarEncomiendasPorEntregar">
+    <ElementType Name="SP_ListarEncomiendasPorEntregarResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_cliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codigo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="peso" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="direccion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="costo_envio" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
