@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idcamionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaenvioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadencomiendasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pesototalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guiaSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -37,17 +43,12 @@
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.guiaSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idcamionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaenvioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadencomiendasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pesototalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReporte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guiaSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guiaSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -69,6 +70,40 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(896, 369);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // idcamionDataGridViewTextBoxColumn
+            // 
+            this.idcamionDataGridViewTextBoxColumn.DataPropertyName = "id_camion";
+            this.idcamionDataGridViewTextBoxColumn.HeaderText = "id_camion";
+            this.idcamionDataGridViewTextBoxColumn.Name = "idcamionDataGridViewTextBoxColumn";
+            // 
+            // fechaenvioDataGridViewTextBoxColumn
+            // 
+            this.fechaenvioDataGridViewTextBoxColumn.DataPropertyName = "fecha_envio";
+            this.fechaenvioDataGridViewTextBoxColumn.HeaderText = "fecha_envio";
+            this.fechaenvioDataGridViewTextBoxColumn.Name = "fechaenvioDataGridViewTextBoxColumn";
+            // 
+            // cantidadencomiendasDataGridViewTextBoxColumn
+            // 
+            this.cantidadencomiendasDataGridViewTextBoxColumn.DataPropertyName = "cantidad_encomiendas";
+            this.cantidadencomiendasDataGridViewTextBoxColumn.HeaderText = "cantidad_encomiendas";
+            this.cantidadencomiendasDataGridViewTextBoxColumn.Name = "cantidadencomiendasDataGridViewTextBoxColumn";
+            // 
+            // pesototalDataGridViewTextBoxColumn
+            // 
+            this.pesototalDataGridViewTextBoxColumn.DataPropertyName = "peso_total";
+            this.pesototalDataGridViewTextBoxColumn.HeaderText = "peso_total";
+            this.pesototalDataGridViewTextBoxColumn.Name = "pesototalDataGridViewTextBoxColumn";
+            // 
+            // guiaSource
+            // 
+            this.guiaSource.DataSource = typeof(Entidades.Entidades.Guia);
             // 
             // label1
             // 
@@ -101,10 +136,12 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.btnReporte, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnInsertar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnEliminar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnActualizar, 1, 0);
@@ -122,7 +159,7 @@
             this.btnInsertar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertar.Location = new System.Drawing.Point(3, 3);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(292, 56);
+            this.btnInsertar.Size = new System.Drawing.Size(218, 56);
             this.btnInsertar.TabIndex = 1;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
@@ -132,9 +169,9 @@
             // 
             this.btnEliminar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(599, 3);
+            this.btnEliminar.Location = new System.Drawing.Point(451, 3);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(294, 56);
+            this.btnEliminar.Size = new System.Drawing.Size(218, 56);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -143,46 +180,24 @@
             // 
             this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(301, 3);
+            this.btnActualizar.Location = new System.Drawing.Point(227, 3);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(292, 56);
+            this.btnActualizar.Size = new System.Drawing.Size(218, 56);
             this.btnActualizar.TabIndex = 2;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             // 
-            // guiaSource
+            // btnReporte
             // 
-            this.guiaSource.DataSource = typeof(Entidades.Entidades.Guia);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // idcamionDataGridViewTextBoxColumn
-            // 
-            this.idcamionDataGridViewTextBoxColumn.DataPropertyName = "id_camion";
-            this.idcamionDataGridViewTextBoxColumn.HeaderText = "id_camion";
-            this.idcamionDataGridViewTextBoxColumn.Name = "idcamionDataGridViewTextBoxColumn";
-            // 
-            // fechaenvioDataGridViewTextBoxColumn
-            // 
-            this.fechaenvioDataGridViewTextBoxColumn.DataPropertyName = "fecha_envio";
-            this.fechaenvioDataGridViewTextBoxColumn.HeaderText = "fecha_envio";
-            this.fechaenvioDataGridViewTextBoxColumn.Name = "fechaenvioDataGridViewTextBoxColumn";
-            // 
-            // cantidadencomiendasDataGridViewTextBoxColumn
-            // 
-            this.cantidadencomiendasDataGridViewTextBoxColumn.DataPropertyName = "cantidad_encomiendas";
-            this.cantidadencomiendasDataGridViewTextBoxColumn.HeaderText = "cantidad_encomiendas";
-            this.cantidadencomiendasDataGridViewTextBoxColumn.Name = "cantidadencomiendasDataGridViewTextBoxColumn";
-            // 
-            // pesototalDataGridViewTextBoxColumn
-            // 
-            this.pesototalDataGridViewTextBoxColumn.DataPropertyName = "peso_total";
-            this.pesototalDataGridViewTextBoxColumn.HeaderText = "peso_total";
-            this.pesototalDataGridViewTextBoxColumn.Name = "pesototalDataGridViewTextBoxColumn";
+            this.btnReporte.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporte.Location = new System.Drawing.Point(675, 3);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(218, 56);
+            this.btnReporte.TabIndex = 4;
+            this.btnReporte.Text = "Ver reporte";
+            this.btnReporte.UseVisualStyleBackColor = true;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // AdmGuia
             // 
@@ -196,11 +211,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdmCliente";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guiaSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guiaSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -221,5 +236,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadencomiendasDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pesototalDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource guiaSource;
+        private System.Windows.Forms.Button btnReporte;
     }
 }

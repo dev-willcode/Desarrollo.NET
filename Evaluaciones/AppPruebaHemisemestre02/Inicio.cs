@@ -63,34 +63,5 @@ namespace AppPruebaHemisemestre02
                 f.Show();
             }
         }
-
-        private void btnEncomiendas_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DSEncomiendas dataset = new DSEncomiendas();
-                List<Encomiendas> lista = EncomiendaLN.ListarEncomiendasPorEntregar();
-                lista.ForEach(aux =>
-                {
-                    dataset.SP_ListarEncomiendasPorEntregar.AddSP_ListarEncomiendasPorEntregarRow(
-                        aux.id,
-                        aux.codigo,
-                        aux.peso,
-                        aux.direccion,
-                        aux.costo_envio,
-                        aux.estado
-                        );
-                });
-                CRCategoria cRCategoria = new CRCategoria();
-
-                cRCategoria.SetDataSource(dataset);
-                crystalReportViewer1.ReportSource = cRCategoria;
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
     }
 }

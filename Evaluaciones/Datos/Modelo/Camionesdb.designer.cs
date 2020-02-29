@@ -211,6 +211,20 @@ namespace Datos.Modelo
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<SP_ListarEncomiendasPorEntregarResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_CabeceraGuia")]
+		public ISingleResult<SP_CabeceraGuiaResult> SP_CabeceraGuia([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<SP_CabeceraGuiaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_DetalleGuia")]
+		public ISingleResult<SP_DetalleGuiaResult> SP_DetalleGuia([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<SP_DetalleGuiaResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CAMION")]
@@ -1731,6 +1745,220 @@ namespace Datos.Modelo
 				if ((this._estado != value))
 				{
 					this._estado = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_CabeceraGuiaResult
+	{
+		
+		private int _id;
+		
+		private System.Nullable<System.DateTime> _fecha_envio;
+		
+		private System.Nullable<int> _cantidad_encomiendas;
+		
+		private System.Nullable<decimal> _peso_total;
+		
+		private string _nombre;
+		
+		private System.Nullable<decimal> _peso_max;
+		
+		public SP_CabeceraGuiaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_envio", DbType="DateTime")]
+		public System.Nullable<System.DateTime> fecha_envio
+		{
+			get
+			{
+				return this._fecha_envio;
+			}
+			set
+			{
+				if ((this._fecha_envio != value))
+				{
+					this._fecha_envio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantidad_encomiendas", DbType="Int")]
+		public System.Nullable<int> cantidad_encomiendas
+		{
+			get
+			{
+				return this._cantidad_encomiendas;
+			}
+			set
+			{
+				if ((this._cantidad_encomiendas != value))
+				{
+					this._cantidad_encomiendas = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_peso_total", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> peso_total
+		{
+			get
+			{
+				return this._peso_total;
+			}
+			set
+			{
+				if ((this._peso_total != value))
+				{
+					this._peso_total = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre", DbType="NVarChar(50)")]
+		public string nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				if ((this._nombre != value))
+				{
+					this._nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_peso_max", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> peso_max
+		{
+			get
+			{
+				return this._peso_max;
+			}
+			set
+			{
+				if ((this._peso_max != value))
+				{
+					this._peso_max = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_DetalleGuiaResult
+	{
+		
+		private int _id_guia;
+		
+		private string _codigo;
+		
+		private System.Nullable<decimal> _peso;
+		
+		private string _direccion;
+		
+		private System.Nullable<decimal> _costo_envio;
+		
+		public SP_DetalleGuiaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_guia", DbType="Int NOT NULL")]
+		public int id_guia
+		{
+			get
+			{
+				return this._id_guia;
+			}
+			set
+			{
+				if ((this._id_guia != value))
+				{
+					this._id_guia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo", DbType="NVarChar(50)")]
+		public string codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				if ((this._codigo != value))
+				{
+					this._codigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_peso", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> peso
+		{
+			get
+			{
+				return this._peso;
+			}
+			set
+			{
+				if ((this._peso != value))
+				{
+					this._peso = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion", DbType="NVarChar(50)")]
+		public string direccion
+		{
+			get
+			{
+				return this._direccion;
+			}
+			set
+			{
+				if ((this._direccion != value))
+				{
+					this._direccion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costo_envio", DbType="Money")]
+		public System.Nullable<decimal> costo_envio
+		{
+			get
+			{
+				return this._costo_envio;
+			}
+			set
+			{
+				if ((this._costo_envio != value))
+				{
+					this._costo_envio = value;
 				}
 			}
 		}

@@ -34,8 +34,6 @@
             this.btnCliente = new System.Windows.Forms.Button();
             this.btnCamiones = new System.Windows.Forms.Button();
             this.btnEncomienda = new System.Windows.Forms.Button();
-            this.btnGuiasEnvio = new System.Windows.Forms.Button();
-            this.btnEncomiendas = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,15 +49,13 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 6;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Controls.Add(this.btnGuiasEnvio, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnEncomiendas, 4, 0);
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.btnGuias, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnCliente, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnCamiones, 2, 0);
@@ -76,9 +72,9 @@
             // 
             this.btnGuias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnGuias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuias.Location = new System.Drawing.Point(492, 3);
+            this.btnGuias.Location = new System.Drawing.Point(735, 3);
             this.btnGuias.Name = "btnGuias";
-            this.btnGuias.Size = new System.Drawing.Size(157, 83);
+            this.btnGuias.Size = new System.Drawing.Size(241, 83);
             this.btnGuias.TabIndex = 4;
             this.btnGuias.Text = "Administrar Guias";
             this.btnGuias.UseVisualStyleBackColor = true;
@@ -90,7 +86,7 @@
             this.btnCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCliente.Location = new System.Drawing.Point(3, 3);
             this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(157, 83);
+            this.btnCliente.Size = new System.Drawing.Size(238, 83);
             this.btnCliente.TabIndex = 1;
             this.btnCliente.Text = "Administrar Clientes";
             this.btnCliente.UseVisualStyleBackColor = true;
@@ -100,9 +96,9 @@
             // 
             this.btnCamiones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCamiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCamiones.Location = new System.Drawing.Point(329, 3);
+            this.btnCamiones.Location = new System.Drawing.Point(491, 3);
             this.btnCamiones.Name = "btnCamiones";
-            this.btnCamiones.Size = new System.Drawing.Size(157, 83);
+            this.btnCamiones.Size = new System.Drawing.Size(238, 83);
             this.btnCamiones.TabIndex = 3;
             this.btnCamiones.Text = "Administrar Camiones";
             this.btnCamiones.UseVisualStyleBackColor = true;
@@ -112,36 +108,13 @@
             // 
             this.btnEncomienda.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEncomienda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEncomienda.Location = new System.Drawing.Point(166, 3);
+            this.btnEncomienda.Location = new System.Drawing.Point(247, 3);
             this.btnEncomienda.Name = "btnEncomienda";
-            this.btnEncomienda.Size = new System.Drawing.Size(157, 83);
+            this.btnEncomienda.Size = new System.Drawing.Size(238, 83);
             this.btnEncomienda.TabIndex = 2;
             this.btnEncomienda.Text = "Administrar Encomiendas";
             this.btnEncomienda.UseVisualStyleBackColor = true;
             this.btnEncomienda.Click += new System.EventHandler(this.btnEncomienda_Click);
-            // 
-            // btnGuiasEnvio
-            // 
-            this.btnGuiasEnvio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnGuiasEnvio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuiasEnvio.Location = new System.Drawing.Point(818, 3);
-            this.btnGuiasEnvio.Name = "btnGuiasEnvio";
-            this.btnGuiasEnvio.Size = new System.Drawing.Size(158, 83);
-            this.btnGuiasEnvio.TabIndex = 2;
-            this.btnGuiasEnvio.Text = "Reporte: Guias de envío";
-            this.btnGuiasEnvio.UseVisualStyleBackColor = true;
-            // 
-            // btnEncomiendas
-            // 
-            this.btnEncomiendas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEncomiendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEncomiendas.Location = new System.Drawing.Point(655, 3);
-            this.btnEncomiendas.Name = "btnEncomiendas";
-            this.btnEncomiendas.Size = new System.Drawing.Size(157, 83);
-            this.btnEncomiendas.TabIndex = 3;
-            this.btnEncomiendas.Text = "Reporte: Encomiendas por entregar";
-            this.btnEncomiendas.UseVisualStyleBackColor = true;
-            this.btnEncomiendas.Click += new System.EventHandler(this.btnEncomiendas_Click);
             // 
             // Inicio
             // 
@@ -167,7 +140,5 @@
         private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.Button btnCamiones;
         private System.Windows.Forms.Button btnEncomienda;
-        private System.Windows.Forms.Button btnGuiasEnvio;
-        private System.Windows.Forms.Button btnEncomiendas;
     }
 }

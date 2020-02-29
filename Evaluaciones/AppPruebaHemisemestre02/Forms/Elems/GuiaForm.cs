@@ -13,6 +13,7 @@ namespace AppPruebaHemisemestre02.Forms.Elems
         private readonly CamionLN CamionLN = new CamionLN();
         private readonly EncomiendaLN EncomiendaLN = new EncomiendaLN();
         private AdmGuia AdmGuia { get; }
+        private Random rnd = new Random();
         public GuiaForm(AdmGuia adm)
         {
             InitializeComponent();

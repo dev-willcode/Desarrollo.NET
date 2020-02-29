@@ -18,6 +18,32 @@ namespace Logica.Controladores
             throw new NotImplementedException();
         }
 
+        public GuiaCabecera obtenerCabecera(int id)
+        {
+            try
+            {
+                return guiaCD.obtenerCabecera(id);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public List<CabeceraDetalle> obtenerDetalle(int id)
+        {
+            try
+            {
+                return guiaCD.obtenerDetalle(id);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public bool Insertar(Guia entidad)
         {
             try
@@ -58,7 +84,7 @@ namespace Logica.Controladores
             catch (Exception ex)
             {
 
-                throw ex; 
+                throw ex;
             }
         }
     }

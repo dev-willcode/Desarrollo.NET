@@ -16,14 +16,14 @@ namespace AppPruebaHemisemestre02.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CREncomienda : ReportClass {
+    public class CRGuia : ReportClass {
         
-        public CREncomienda() {
+        public CRGuia() {
         }
         
         public override string ResourceName {
             get {
-                return "CREncomienda.rpt";
+                return "CRGuia.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace AppPruebaHemisemestre02.Reportes {
         
         public override string FullResourceName {
             get {
-                return "AppPruebaHemisemestre02.Reportes.CREncomienda.rpt";
+                return "AppPruebaHemisemestre02.Reportes.CRGuia.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace AppPruebaHemisemestre02.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCREncomienda : Component, ICachedReport {
+    public class CachedCRGuia : Component, ICachedReport {
         
-        public CachedCREncomienda() {
+        public CachedCRGuia() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace AppPruebaHemisemestre02.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CREncomienda rpt = new CREncomienda();
+            CRGuia rpt = new CRGuia();
             rpt.Site = this.Site;
             return rpt;
         }

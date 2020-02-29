@@ -36,6 +36,58 @@ namespace Datos.AccesoDatos
             }
         }
 
+        public List<CabeceraDetalle> obtenerDetalle(int id)
+        {
+            CamionesdbDataContext DB;
+            try
+            {
+                using (DB = new CamionesdbDataContext())
+                {
+                    List<CabeceraDetalle> listado = new List<CabeceraDetalle>();
+                    DB.SP_DetalleGuia(id).ToList().ForEach(aux =>
+                    {
+                        listado.Add(new CabeceraDetalle(
+                            aux.id_guia,
+                            aux.codigo,
+                            aux.peso.GetValueOrDefault(),
+                            aux.direccion,
+                            aux.costo_envio.GetValueOrDefault()
+                            ));
+                    }
+                    );
+                    return listado;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new DatosExcepciones("Error al listar los detalles.", ex);
+            }
+        }
+
+        public GuiaCabecera obtenerCabecera(int id)
+        {
+            CamionesdbDataContext DB;
+            try
+            {
+                using (DB = new CamionesdbDataContext())
+                {
+                    SP_CabeceraGuiaResult aux = DB.SP_CabeceraGuia(id).ToList()[0];
+                    return new GuiaCabecera(
+                        aux.id,
+                        aux.fecha_envio.GetValueOrDefault(),
+                        aux.cantidad_encomiendas.GetValueOrDefault(),
+                        aux.peso_total.GetValueOrDefault(),
+                        aux.nombre,
+                        aux.peso_max.GetValueOrDefault()
+                        );
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new DatosExcepciones("Error al listar la cabecera.", ex);
+            }
+        }
+
         public List<Guia> Listar()
         {
             CamionesdbDataContext DB;

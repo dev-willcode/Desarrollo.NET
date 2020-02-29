@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using AppPruebaHemisemestre02.Forms.Elems;
+using AppPruebaHemisemestre02.Reportes;
+using Entidades.Entidades;
 using Logica.Controladores;
 
 namespace AppPruebaHemisemestre02.Forms
@@ -30,6 +32,19 @@ namespace AppPruebaHemisemestre02.Forms
         {
             GuiaForm form = new GuiaForm(this);
             form.ShowDialog();
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                Reporte reporte = new Reporte()
+                {
+                    MdiParent = this.MdiParent
+                };
+                reporte.mostrarReporte((dataGridView1.CurrentRow.DataBoundItem as Guia).id);
+                reporte.Show();
+            }
         }
     }
 }
